@@ -23,6 +23,21 @@
 		CAC79C0222451C8C007CFD38 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC79C0122451C8C007CFD38 /* Colors.swift */; };
 		CAC79C0A22452717007CFD38 /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC79C0922452717007CFD38 /* ApiEndpoint.swift */; };
 		CAC79C0C2245296C007CFD38 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = CAC79C0B2245296C007CFD38 /* Keys.plist */; };
+		CAE424DF224576F4005F8158 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424DE224576F4005F8158 /* LoginRequest.swift */; };
+		CAE424E122457CA2005F8158 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424E022457CA2005F8158 /* Network.swift */; };
+		CAE424E422457E0A005F8158 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424E322457E0A005F8158 /* LoginResponse.swift */; };
+		CAE424E92245826C005F8158 /* ViewModelContainter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424E62245826B005F8158 /* ViewModelContainter.swift */; };
+		CAE424EA2245826C005F8158 /* SingletonContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424E72245826C005F8158 /* SingletonContainer.swift */; };
+		CAE424EB2245826C005F8158 /* ViewControllerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424E82245826C005F8158 /* ViewControllerContainer.swift */; };
+		CAE424EE224583CB005F8158 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424EC224583CB005F8158 /* LoginVC.swift */; };
+		CAE424EF224583CB005F8158 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAE424ED224583CB005F8158 /* LoginVC.xib */; };
+		CAE424F6224584B3005F8158 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424F5224584B3005F8158 /* BaseViewController.swift */; };
+		CAE424FC224584E8005F8158 /* ReusableCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424F7224584E6005F8158 /* ReusableCollectionCell.swift */; };
+		CAE424FD224584E8005F8158 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424F8224584E7005F8158 /* ReusableCell.swift */; };
+		CAE424FE224584E8005F8158 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424F9224584E7005F8158 /* ViewModelType.swift */; };
+		CAE424FF224584E8005F8158 /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424FA224584E8005F8158 /* Persistable.swift */; };
+		CAE42500224584E8005F8158 /* DomainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424FB224584E8005F8158 /* DomainData.swift */; };
+		CAE4250322458563005F8158 /* UIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE4250222458563005F8158 /* UIResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +86,21 @@
 		CAC79C0122451C8C007CFD38 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		CAC79C0922452717007CFD38 /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
 		CAC79C0B2245296C007CFD38 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		CAE424DE224576F4005F8158 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		CAE424E022457CA2005F8158 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		CAE424E322457E0A005F8158 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		CAE424E62245826B005F8158 /* ViewModelContainter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelContainter.swift; sourceTree = "<group>"; };
+		CAE424E72245826C005F8158 /* SingletonContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingletonContainer.swift; sourceTree = "<group>"; };
+		CAE424E82245826C005F8158 /* ViewControllerContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerContainer.swift; sourceTree = "<group>"; };
+		CAE424EC224583CB005F8158 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		CAE424ED224583CB005F8158 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		CAE424F5224584B3005F8158 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CAE424F7224584E6005F8158 /* ReusableCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableCollectionCell.swift; sourceTree = "<group>"; };
+		CAE424F8224584E7005F8158 /* ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
+		CAE424F9224584E7005F8158 /* ViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		CAE424FA224584E8005F8158 /* Persistable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
+		CAE424FB224584E8005F8158 /* DomainData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainData.swift; sourceTree = "<group>"; };
+		CAE4250222458563005F8158 /* UIResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +179,8 @@
 		CA59D1552243DB2C0021B1DF /* MovieBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				CAE424F222458416005F8158 /* Common */,
+				CAE424E52245821D005F8158 /* DI */,
 				CAC79C07224526FF007CFD38 /* Data */,
 				CAC79C05224521E5007CFD38 /* UI */,
 				CAC79C04224521DC007CFD38 /* Config */,
@@ -201,8 +233,8 @@
 		CAC79C05224521E5007CFD38 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				CAC79BEF2244CC0B007CFD38 /* SwipeVC.swift */,
-				CAC79BF02244CC0B007CFD38 /* SwipeVC.xib */,
+				CAE424F1224583FC005F8158 /* Login */,
+				CAE424F0224583E9005F8158 /* Posters */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -210,6 +242,7 @@
 		CAC79C07224526FF007CFD38 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CAE424DC224576B6005F8158 /* Models */,
 				CAC79C0822452708007CFD38 /* Network */,
 			);
 			path = Data;
@@ -219,8 +252,100 @@
 			isa = PBXGroup;
 			children = (
 				CAC79C0922452717007CFD38 /* ApiEndpoint.swift */,
+				CAE424E022457CA2005F8158 /* Network.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		CAE424DC224576B6005F8158 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CAE424E222457DFD005F8158 /* Responses */,
+				CAE424DD224576DF005F8158 /* Requests */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CAE424DD224576DF005F8158 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				CAE424DE224576F4005F8158 /* LoginRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		CAE424E222457DFD005F8158 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				CAE424E322457E0A005F8158 /* LoginResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		CAE424E52245821D005F8158 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				CAE424E72245826C005F8158 /* SingletonContainer.swift */,
+				CAE424E82245826C005F8158 /* ViewControllerContainer.swift */,
+				CAE424E62245826B005F8158 /* ViewModelContainter.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		CAE424F0224583E9005F8158 /* Posters */ = {
+			isa = PBXGroup;
+			children = (
+				CAC79BEF2244CC0B007CFD38 /* SwipeVC.swift */,
+				CAC79BF02244CC0B007CFD38 /* SwipeVC.xib */,
+			);
+			path = Posters;
+			sourceTree = "<group>";
+		};
+		CAE424F1224583FC005F8158 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CAE424EC224583CB005F8158 /* LoginVC.swift */,
+				CAE424ED224583CB005F8158 /* LoginVC.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CAE424F222458416005F8158 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CAE4250122458530005F8158 /* Enums */,
+				CAE424F422458494005F8158 /* Protocols */,
+				CAE424F32245848B005F8158 /* Base */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		CAE424F32245848B005F8158 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CAE424F5224584B3005F8158 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		CAE424F422458494005F8158 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CAE424FB224584E8005F8158 /* DomainData.swift */,
+				CAE424FA224584E8005F8158 /* Persistable.swift */,
+				CAE424F8224584E7005F8158 /* ReusableCell.swift */,
+				CAE424F7224584E6005F8158 /* ReusableCollectionCell.swift */,
+				CAE424F9224584E7005F8158 /* ViewModelType.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CAE4250122458530005F8158 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				CAE4250222458563005F8158 /* UIResult.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +456,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAE424EF224583CB005F8158 /* LoginVC.xib in Resources */,
 				CAC79BFE2244FD95007CFD38 /* MovieSlide.xib in Resources */,
 				CAC79C0C2245296C007CFD38 /* Keys.plist in Resources */,
 				CAC79BF22244CC0B007CFD38 /* SwipeVC.xib in Resources */,
@@ -485,11 +611,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAE424FF224584E8005F8158 /* Persistable.swift in Sources */,
+				CAE424FD224584E8005F8158 /* ReusableCell.swift in Sources */,
 				CA59D1572243DB2C0021B1DF /* AppDelegate.swift in Sources */,
 				CAC79C0222451C8C007CFD38 /* Colors.swift in Sources */,
+				CAE424E422457E0A005F8158 /* LoginResponse.swift in Sources */,
+				CAE424E122457CA2005F8158 /* Network.swift in Sources */,
+				CAE424FC224584E8005F8158 /* ReusableCollectionCell.swift in Sources */,
 				CAC79BFC2244FD20007CFD38 /* MovieSlide.swift in Sources */,
+				CAE42500224584E8005F8158 /* DomainData.swift in Sources */,
+				CAE424F6224584B3005F8158 /* BaseViewController.swift in Sources */,
+				CAE4250322458563005F8158 /* UIResult.swift in Sources */,
+				CAE424EA2245826C005F8158 /* SingletonContainer.swift in Sources */,
+				CAE424EB2245826C005F8158 /* ViewControllerContainer.swift in Sources */,
+				CAE424FE224584E8005F8158 /* ViewModelType.swift in Sources */,
+				CAE424E92245826C005F8158 /* ViewModelContainter.swift in Sources */,
 				CAC79BF12244CC0B007CFD38 /* SwipeVC.swift in Sources */,
+				CAE424EE224583CB005F8158 /* LoginVC.swift in Sources */,
 				CAC79C0022451C5E007CFD38 /* Constants.swift in Sources */,
+				CAE424DF224576F4005F8158 /* LoginRequest.swift in Sources */,
 				CAC79C0A22452717007CFD38 /* ApiEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

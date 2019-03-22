@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Moya
 
 class SwipeVC: UIViewController {
     
@@ -23,11 +24,6 @@ class SwipeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupScrollView(size: view.bounds.size)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
     }
     
     private func setupScrollView(size: CGSize) {
