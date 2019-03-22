@@ -60,35 +60,4 @@ extension SwipeVC: UIScrollViewDelegate {
         pageControl.currentPage = Int(page)
     }
     
-    func scrollView(_ scrollView: UIScrollView, didScrollToPercentageOffset percentageHorizontalOffset: CGFloat) {
-        if(pageControl.currentPage == 0) {
-            let pageUnselectedColor: UIColor = fade(fromRed: 255/255, fromGreen: 255/255, fromBlue: 255/255, fromAlpha: 1, toRed: 103/255, toGreen: 58/255, toBlue: 183/255, toAlpha: 1, withPercentage: percentageHorizontalOffset * 3)
-            pageControl.pageIndicatorTintColor = pageUnselectedColor
-            
-            
-            let bgColor: UIColor = fade(fromRed: 103/255, fromGreen: 58/255, fromBlue: 183/255, fromAlpha: 1, toRed: 255/255, toGreen: 255/255, toBlue: 255/255, toAlpha: 1, withPercentage: percentageHorizontalOffset * 3)
-            slides[pageControl.currentPage].backgroundColor = bgColor
-            
-            let pageSelectedColor: UIColor = fade(fromRed: 81/255, fromGreen: 36/255, fromBlue: 152/255, fromAlpha: 1, toRed: 103/255, toGreen: 58/255, toBlue: 183/255, toAlpha: 1, withPercentage: percentageHorizontalOffset * 3)
-            pageControl.currentPageIndicatorTintColor = pageSelectedColor
-        }
-    }
-    
-    func fade(fromRed: CGFloat,
-              fromGreen: CGFloat,
-              fromBlue: CGFloat,
-              fromAlpha: CGFloat,
-              toRed: CGFloat,
-              toGreen: CGFloat,
-              toBlue: CGFloat,
-              toAlpha: CGFloat,
-              withPercentage percentage: CGFloat) -> UIColor {
-        
-        let red: CGFloat = (toRed - fromRed) * percentage + fromRed
-        let green: CGFloat = (toGreen - fromGreen) * percentage + fromGreen
-        let blue: CGFloat = (toBlue - fromBlue) * percentage + fromBlue
-        let alpha: CGFloat = (toAlpha - fromAlpha) * percentage + fromAlpha
-        
-        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
-    }
 }

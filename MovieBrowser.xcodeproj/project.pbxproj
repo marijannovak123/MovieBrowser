@@ -21,6 +21,8 @@
 		CAC79BFE2244FD95007CFD38 /* MovieSlide.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAC79BFD2244FD95007CFD38 /* MovieSlide.xib */; };
 		CAC79C0022451C5E007CFD38 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC79BFF22451C5E007CFD38 /* Constants.swift */; };
 		CAC79C0222451C8C007CFD38 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC79C0122451C8C007CFD38 /* Colors.swift */; };
+		CAC79C0A22452717007CFD38 /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC79C0922452717007CFD38 /* ApiEndpoint.swift */; };
+		CAC79C0C2245296C007CFD38 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = CAC79C0B2245296C007CFD38 /* Keys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		CAC79BFD2244FD95007CFD38 /* MovieSlide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieSlide.xib; sourceTree = "<group>"; };
 		CAC79BFF22451C5E007CFD38 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CAC79C0122451C8C007CFD38 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		CAC79C0922452717007CFD38 /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
+		CAC79C0B2245296C007CFD38 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,16 +149,15 @@
 		CA59D1552243DB2C0021B1DF /* MovieBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				CAC79C07224526FF007CFD38 /* Data */,
+				CAC79C05224521E5007CFD38 /* UI */,
+				CAC79C04224521DC007CFD38 /* Config */,
+				CAC79C03224521C2007CFD38 /* Views */,
 				CA59D1562243DB2C0021B1DF /* AppDelegate.swift */,
 				CA59D15D2243DB2E0021B1DF /* Assets.xcassets */,
 				CA59D15F2243DB2E0021B1DF /* LaunchScreen.storyboard */,
 				CA59D1622243DB2E0021B1DF /* Info.plist */,
-				CAC79BEF2244CC0B007CFD38 /* SwipeVC.swift */,
-				CAC79BF02244CC0B007CFD38 /* SwipeVC.xib */,
-				CAC79BFB2244FD20007CFD38 /* MovieSlide.swift */,
-				CAC79BFD2244FD95007CFD38 /* MovieSlide.xib */,
-				CAC79BFF22451C5E007CFD38 /* Constants.swift */,
-				CAC79C0122451C8C007CFD38 /* Colors.swift */,
+				CAC79C0B2245296C007CFD38 /* Keys.plist */,
 			);
 			path = MovieBrowser;
 			sourceTree = "<group>";
@@ -175,6 +178,49 @@
 				CA59D1782243DB2E0021B1DF /* Info.plist */,
 			);
 			path = MovieBrowserUITests;
+			sourceTree = "<group>";
+		};
+		CAC79C03224521C2007CFD38 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CAC79BFB2244FD20007CFD38 /* MovieSlide.swift */,
+				CAC79BFD2244FD95007CFD38 /* MovieSlide.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CAC79C04224521DC007CFD38 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				CAC79BFF22451C5E007CFD38 /* Constants.swift */,
+				CAC79C0122451C8C007CFD38 /* Colors.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		CAC79C05224521E5007CFD38 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CAC79BEF2244CC0B007CFD38 /* SwipeVC.swift */,
+				CAC79BF02244CC0B007CFD38 /* SwipeVC.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CAC79C07224526FF007CFD38 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CAC79C0822452708007CFD38 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CAC79C0822452708007CFD38 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CAC79C0922452717007CFD38 /* ApiEndpoint.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAC79BFE2244FD95007CFD38 /* MovieSlide.xib in Resources */,
+				CAC79C0C2245296C007CFD38 /* Keys.plist in Resources */,
 				CAC79BF22244CC0B007CFD38 /* SwipeVC.xib in Resources */,
 				CA59D1612243DB2E0021B1DF /* LaunchScreen.storyboard in Resources */,
 				CA59D15E2243DB2E0021B1DF /* Assets.xcassets in Resources */,
@@ -443,6 +490,7 @@
 				CAC79BFC2244FD20007CFD38 /* MovieSlide.swift in Sources */,
 				CAC79BF12244CC0B007CFD38 /* SwipeVC.swift in Sources */,
 				CAC79C0022451C5E007CFD38 /* Constants.swift in Sources */,
+				CAC79C0A22452717007CFD38 /* ApiEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
