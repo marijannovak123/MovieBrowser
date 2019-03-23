@@ -6,13 +6,20 @@
 //  Copyright © 2019 Novak. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+import RxCocoa
 
 class LoginVM: ViewModelType {
     
-    struct Input {}
+    struct Input {
+        let loginTrigger: Driver<Void>
+        let username: Driver<String>
+        let password: Driver<String>
+    }
     
-    struct Output {}
+    struct Output {
+        let loginResult: Driver<UIResult>
+    }
     
     private let repository: AuthRepository
     
@@ -21,6 +28,22 @@ class LoginVM: ViewModelType {
     }
     
     func transform(input: LoginVM.Input) -> LoginVM.Output {
-        return Output()
+        let loginResult = input.loginTrigger
+            .withLatestFrom (
+                Driver.combineLatest(input.username, input.password)
+            ).asObservable()
+            .flatMap { (parameters) -> Observable<Bool> in
+                let (username, password) = parameters
+                return self.repository.login(username: username, password: password)
+                    .catchErrorJustReturn(false)
+            }.map {
+                if $0 {
+                   return UIResult.success("Good")
+                } else {
+                    return UIResult.error("No good")
+                }
+            }.asDriver(onErrorJustReturn: UIResult.error(""))
+        
+        return Output(loginResult: loginResult)
     }
 }

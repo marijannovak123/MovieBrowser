@@ -6,9 +6,14 @@
 //  Copyright © 2019 Novak. All rights reserved.
 //
 
-import Foundation
+import RxSwift
 
 class AuthStorage: BaseStorage {
     
-    
+    func saveToken(response: TokenResponse) -> Observable<Void> {
+        return Completable.fromAction {
+            self.defaults.token = response.requestToken
+            self.defaults.expiresAt = response.expiresAt
+        }.asObservable().mapToVoid()
+    }
 }

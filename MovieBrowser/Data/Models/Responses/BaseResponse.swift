@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+struct BaseResponse {
+    let statusMessage: String
+    let statusCode: Int
+}

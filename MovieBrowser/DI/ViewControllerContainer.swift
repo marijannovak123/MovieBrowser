@@ -13,6 +13,9 @@ class ViewControllerContainer {
     static func build(viewModelContainer: Container) -> Container {
         let container = Container(parent: viewModelContainer)
         
+        container.register(LoginVC.self) {
+            LoginVC(viewModel: $0.resolve(LoginVM.self)!)
+        }
        
         return container
     }

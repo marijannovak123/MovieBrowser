@@ -24,6 +24,14 @@ class SingletonContainer {
             }
         }
         
+        container.register(DatabaseManager.self) {
+            DatabaseManager(realm: $0.resolve(Realm.self)!)
+        }
+        
+        container.register(UserDefaultsHelper.self) { _ in
+            UserDefaultsHelper()
+        }
+        
         container.register(MoyaProvider<ApiEndpoint>.self) { _ in
             let loggerPlugin = NetworkLoggerPlugin(verbose: true)
             return MoyaProvider<ApiEndpoint>(plugins: [loggerPlugin])
@@ -35,11 +43,20 @@ class SingletonContainer {
         
     
         // MARK: Services
-      
+        container.register(AuthService.self) {
+            AuthService(api: $0.resolve(ApiNetwork.self)!)
+        }
+        
         // MARK: Storages
-   
+        container.register(AuthStorage.self) {
+            AuthStorage(dbManager: $0.resolve(DatabaseManager.self)!, defaults: $0.resolve(UserDefaultsHelper.self)!)
+        }
+        
         // MARK: Repositories
-       
+        container.register(AuthRepository.self) {
+            AuthRepository(service: $0.resolve(AuthService.self)!, storage: $0.resolve(AuthStorage.self)!)
+        }
+        
         return container
     }
 }

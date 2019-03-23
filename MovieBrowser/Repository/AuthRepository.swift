@@ -6,7 +6,7 @@
 //  Copyright © 2019 Novak. All rights reserved.
 //
 
-import Foundation
+import RxSwift
 
 class AuthRepository {
     
@@ -16,5 +16,14 @@ class AuthRepository {
     init(service: AuthService, storage: AuthStorage) {
         self.service = service
         self.storage = storage
+    }
+    
+    func login(username: String, password: String) -> Observable<Bool> {
+        return service.requestNewToken()
+            .flatMap {
+                self.service.login(request: LoginRequest(username: username, password: password, requestToken: $0.requestToken))
+            }.flatMap {
+                self.storage.saveToken(response: $0)
+            }.map { _ in true }
     }
 }

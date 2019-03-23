@@ -13,7 +13,6 @@ typealias CompletionHandler = () -> Void
 typealias NetworkErrorHandler = (NetworkError) -> Void
 typealias NetworkResult<T> = Result<T, NetworkError>
 
-
 enum Result<T, ErrorType: Error> {
     case success(T)
     case failure(ErrorType)
@@ -23,7 +22,7 @@ struct NetworkError: Error {
     let status: ResponseStatus
     let errorMessage: String
     
-    init(error: MoyaError?) {
+    init(_ error: MoyaError?) {
         if let response = error?.response {
             let decodedStatus = ResponseStatus.getByCode(code: response.statusCode)
             if decodedStatus == .parseError {
@@ -105,16 +104,23 @@ enum ResponseStatus: Int {
 class Network<ApiTarget: TargetType> {
     
     private var provider: MoyaProvider<ApiTarget>
+    private var decoder: JSONDecoder!
     
     init(provider: MoyaProvider<ApiTarget>) {
         self.provider = provider
+        decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
     }
     
     func request<T: Decodable>(target: ApiTarget, responseType: T.Type) -> Observable<T> {
         return provider.rx.request(target)
             .asObservable()
             .filterSuccessfulStatusCodes()
-            .map(responseType)
+            .map(responseType, using: decoder)
+//            .map { NetworkResult.success($0) }
+//            .catchError { error in
+//                .just(.failure(NetworkError(error as? MoyaError)))
+//            }
     }
 }
 

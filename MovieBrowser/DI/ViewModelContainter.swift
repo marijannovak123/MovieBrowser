@@ -13,6 +13,10 @@ class ViewModelContainer {
     static func build(singletonContainer: Container) -> Container {
         let container = Container(parent: singletonContainer)
         
+        container.register(LoginVM.self) {
+            LoginVM(repository: $0.resolve(AuthRepository.self)!)
+        }
+        
         return container
     }
 }

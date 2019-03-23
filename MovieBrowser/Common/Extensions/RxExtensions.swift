@@ -19,6 +19,14 @@ extension PrimitiveSequenceType where TraitType == CompletableTrait, ElementType
             return Disposables.create()
         }
     }
+    
+    static func fromAction(block: @escaping () -> Void) -> Completable {
+        return Completable.create { emitter in
+            block()
+            emitter(.completed)
+            return Disposables.create()
+        }
+    }
 }
 
 extension PrimitiveSequenceType where TraitType == SingleTrait {
@@ -35,6 +43,8 @@ extension PrimitiveSequenceType where TraitType == SingleTrait {
             return Disposables.create()
         }
     }
+    
+   
 }
 
 extension ObservableType where E == Bool {

@@ -12,9 +12,11 @@ import RxSwift
 class BaseStorage {
     
     let databaseManager: DatabaseManager
+    let defaults: UserDefaultsHelper
     
-    init(dbManager: DatabaseManager) {
+    init(dbManager: DatabaseManager, defaults: UserDefaultsHelper) {
         self.databaseManager = dbManager
+        self.defaults = defaults
     }
     
 }

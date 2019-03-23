@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         viewControllerContainer = ViewControllerContainer.build(viewModelContainer: viewModelContainer)
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = SwipeVC()
+        window?.rootViewController = viewControllerContainer.resolve(LoginVC.self)!
         window?.makeKeyAndVisible()
             
         return true
