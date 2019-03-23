@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AB53DAB93D9A1B83A1357A541F1D3C26"
+               BlueprintIdentifier = "A557E93A5B129A2BD4B1A1DA7D3B1685"
                BuildableName = "TPKeyboardAvoiding.framework"
                BlueprintName = "TPKeyboardAvoiding"
                ReferencedContainer = "container:Pods.xcodeproj">

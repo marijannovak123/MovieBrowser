@@ -15,6 +15,19 @@
 		CA59D1612243DB2E0021B1DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA59D15F2243DB2E0021B1DF /* LaunchScreen.storyboard */; };
 		CA59D16C2243DB2E0021B1DF /* MovieBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA59D16B2243DB2E0021B1DF /* MovieBrowserTests.swift */; };
 		CA59D1772243DB2E0021B1DF /* MovieBrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA59D1762243DB2E0021B1DF /* MovieBrowserUITests.swift */; };
+		CAC574632246329900593B26 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC574622246329900593B26 /* LoginVM.swift */; };
+		CAC574662246333200593B26 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC574652246333200593B26 /* AuthRepository.swift */; };
+		CAC57469224633CA00593B26 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC57468224633CA00593B26 /* DatabaseManager.swift */; };
+		CAC574712246346300593B26 /* RealmExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5746B2246346200593B26 /* RealmExtensions.swift */; };
+		CAC574722246346300593B26 /* RxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5746C2246346200593B26 /* RxExtensions.swift */; };
+		CAC574732246346300593B26 /* TableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5746D2246346300593B26 /* TableViewExtensions.swift */; };
+		CAC574742246346300593B26 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5746E2246346300593B26 /* StringExtensions.swift */; };
+		CAC574752246346300593B26 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5746F2246346300593B26 /* ViewControllerExtensions.swift */; };
+		CAC574782246351700593B26 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC574772246351700593B26 /* Screen.swift */; };
+		CAC5747D224636EC00593B26 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5747C224636EC00593B26 /* AuthService.swift */; };
+		CAC574802246371000593B26 /* BaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5747E2246371000593B26 /* BaseStorage.swift */; };
+		CAC574812246371000593B26 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5747F2246371000593B26 /* BaseService.swift */; };
+		CAC574842246374800593B26 /* AuthStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC574832246374800593B26 /* AuthStorage.swift */; };
 		CAC79BF12244CC0B007CFD38 /* SwipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC79BEF2244CC0B007CFD38 /* SwipeVC.swift */; };
 		CAC79BF22244CC0B007CFD38 /* SwipeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAC79BF02244CC0B007CFD38 /* SwipeVC.xib */; };
 		CAC79BFC2244FD20007CFD38 /* MovieSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC79BFB2244FD20007CFD38 /* MovieSlide.swift */; };
@@ -32,7 +45,6 @@
 		CAE424EE224583CB005F8158 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424EC224583CB005F8158 /* LoginVC.swift */; };
 		CAE424EF224583CB005F8158 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAE424ED224583CB005F8158 /* LoginVC.xib */; };
 		CAE424F6224584B3005F8158 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424F5224584B3005F8158 /* BaseViewController.swift */; };
-		CAE424FC224584E8005F8158 /* ReusableCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424F7224584E6005F8158 /* ReusableCollectionCell.swift */; };
 		CAE424FD224584E8005F8158 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424F8224584E7005F8158 /* ReusableCell.swift */; };
 		CAE424FE224584E8005F8158 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424F9224584E7005F8158 /* ViewModelType.swift */; };
 		CAE424FF224584E8005F8158 /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424FA224584E8005F8158 /* Persistable.swift */; };
@@ -78,6 +90,19 @@
 		CA59D1722243DB2E0021B1DF /* MovieBrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieBrowserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA59D1762243DB2E0021B1DF /* MovieBrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieBrowserUITests.swift; sourceTree = "<group>"; };
 		CA59D1782243DB2E0021B1DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAC574622246329900593B26 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		CAC574652246333200593B26 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		CAC57468224633CA00593B26 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		CAC5746B2246346200593B26 /* RealmExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmExtensions.swift; sourceTree = "<group>"; };
+		CAC5746C2246346200593B26 /* RxExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxExtensions.swift; sourceTree = "<group>"; };
+		CAC5746D2246346300593B26 /* TableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewExtensions.swift; sourceTree = "<group>"; };
+		CAC5746E2246346300593B26 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		CAC5746F2246346300593B26 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
+		CAC574772246351700593B26 /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		CAC5747C224636EC00593B26 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		CAC5747E2246371000593B26 /* BaseStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseStorage.swift; sourceTree = "<group>"; };
+		CAC5747F2246371000593B26 /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		CAC574832246374800593B26 /* AuthStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStorage.swift; sourceTree = "<group>"; };
 		CAC79BEF2244CC0B007CFD38 /* SwipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeVC.swift; sourceTree = "<group>"; };
 		CAC79BF02244CC0B007CFD38 /* SwipeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipeVC.xib; sourceTree = "<group>"; };
 		CAC79BFB2244FD20007CFD38 /* MovieSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSlide.swift; sourceTree = "<group>"; };
@@ -95,7 +120,6 @@
 		CAE424EC224583CB005F8158 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		CAE424ED224583CB005F8158 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		CAE424F5224584B3005F8158 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		CAE424F7224584E6005F8158 /* ReusableCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableCollectionCell.swift; sourceTree = "<group>"; };
 		CAE424F8224584E7005F8158 /* ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
 		CAE424F9224584E7005F8158 /* ViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		CAE424FA224584E8005F8158 /* Persistable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
@@ -179,6 +203,7 @@
 		CA59D1552243DB2C0021B1DF /* MovieBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				CAC57464224632F400593B26 /* Repository */,
 				CAE424F222458416005F8158 /* Common */,
 				CAE424E52245821D005F8158 /* DI */,
 				CAC79C07224526FF007CFD38 /* Data */,
@@ -212,6 +237,65 @@
 			path = MovieBrowserUITests;
 			sourceTree = "<group>";
 		};
+		CAC57464224632F400593B26 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				CAC574652246333200593B26 /* AuthRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		CAC57467224633A700593B26 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				CAC574822246373C00593B26 /* Storage */,
+				CAC5746B2246346200593B26 /* RealmExtensions.swift */,
+				CAC57468224633CA00593B26 /* DatabaseManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		CAC574762246348800593B26 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CAC5746C2246346200593B26 /* RxExtensions.swift */,
+				CAC5746E2246346300593B26 /* StringExtensions.swift */,
+				CAC5746D2246346300593B26 /* TableViewExtensions.swift */,
+				CAC5746F2246346300593B26 /* ViewControllerExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CAC57479224635EB00593B26 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CAC5747A224635F200593B26 /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Persistance;
+			sourceTree = "<group>";
+		};
+		CAC5747B224636D700593B26 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CAC5747C224636EC00593B26 /* AuthService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		CAC574822246373C00593B26 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				CAC574832246374800593B26 /* AuthStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		CAC79C03224521C2007CFD38 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +326,7 @@
 		CAC79C07224526FF007CFD38 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CAC57467224633A700593B26 /* Database */,
 				CAE424DC224576B6005F8158 /* Models */,
 				CAC79C0822452708007CFD38 /* Network */,
 			);
@@ -251,6 +336,7 @@
 		CAC79C0822452708007CFD38 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				CAC5747B224636D700593B26 /* Service */,
 				CAC79C0922452717007CFD38 /* ApiEndpoint.swift */,
 				CAE424E022457CA2005F8158 /* Network.swift */,
 			);
@@ -260,6 +346,8 @@
 		CAE424DC224576B6005F8158 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CAC5747A224635F200593B26 /* Persistance */,
+				CAC57479224635EB00593B26 /* Domain */,
 				CAE424E222457DFD005F8158 /* Responses */,
 				CAE424DD224576DF005F8158 /* Requests */,
 			);
@@ -306,6 +394,7 @@
 			children = (
 				CAE424EC224583CB005F8158 /* LoginVC.swift */,
 				CAE424ED224583CB005F8158 /* LoginVC.xib */,
+				CAC574622246329900593B26 /* LoginVM.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -313,6 +402,7 @@
 		CAE424F222458416005F8158 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CAC574762246348800593B26 /* Extensions */,
 				CAE4250122458530005F8158 /* Enums */,
 				CAE424F422458494005F8158 /* Protocols */,
 				CAE424F32245848B005F8158 /* Base */,
@@ -323,6 +413,8 @@
 		CAE424F32245848B005F8158 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				CAC5747F2246371000593B26 /* BaseService.swift */,
+				CAC5747E2246371000593B26 /* BaseStorage.swift */,
 				CAE424F5224584B3005F8158 /* BaseViewController.swift */,
 			);
 			path = Base;
@@ -334,7 +426,6 @@
 				CAE424FB224584E8005F8158 /* DomainData.swift */,
 				CAE424FA224584E8005F8158 /* Persistable.swift */,
 				CAE424F8224584E7005F8158 /* ReusableCell.swift */,
-				CAE424F7224584E6005F8158 /* ReusableCollectionCell.swift */,
 				CAE424F9224584E7005F8158 /* ViewModelType.swift */,
 			);
 			path = Protocols;
@@ -343,6 +434,7 @@
 		CAE4250122458530005F8158 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				CAC574772246351700593B26 /* Screen.swift */,
 				CAE4250222458563005F8158 /* UIResult.swift */,
 			);
 			path = Enums;
@@ -506,7 +598,6 @@
 				"${BUILT_PRODUCTS_DIR}/RxKingfisher/RxKingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SWRevealViewController/SWRevealViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
 			);
@@ -529,7 +620,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxKingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWRevealViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
 			);
@@ -612,22 +702,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAE424FF224584E8005F8158 /* Persistable.swift in Sources */,
+				CAC574662246333200593B26 /* AuthRepository.swift in Sources */,
 				CAE424FD224584E8005F8158 /* ReusableCell.swift in Sources */,
 				CA59D1572243DB2C0021B1DF /* AppDelegate.swift in Sources */,
+				CAC574782246351700593B26 /* Screen.swift in Sources */,
+				CAC574722246346300593B26 /* RxExtensions.swift in Sources */,
 				CAC79C0222451C8C007CFD38 /* Colors.swift in Sources */,
+				CAC57469224633CA00593B26 /* DatabaseManager.swift in Sources */,
+				CAC574732246346300593B26 /* TableViewExtensions.swift in Sources */,
 				CAE424E422457E0A005F8158 /* LoginResponse.swift in Sources */,
 				CAE424E122457CA2005F8158 /* Network.swift in Sources */,
-				CAE424FC224584E8005F8158 /* ReusableCollectionCell.swift in Sources */,
+				CAC5747D224636EC00593B26 /* AuthService.swift in Sources */,
 				CAC79BFC2244FD20007CFD38 /* MovieSlide.swift in Sources */,
 				CAE42500224584E8005F8158 /* DomainData.swift in Sources */,
 				CAE424F6224584B3005F8158 /* BaseViewController.swift in Sources */,
+				CAC574752246346300593B26 /* ViewControllerExtensions.swift in Sources */,
+				CAC574712246346300593B26 /* RealmExtensions.swift in Sources */,
 				CAE4250322458563005F8158 /* UIResult.swift in Sources */,
 				CAE424EA2245826C005F8158 /* SingletonContainer.swift in Sources */,
+				CAC574842246374800593B26 /* AuthStorage.swift in Sources */,
 				CAE424EB2245826C005F8158 /* ViewControllerContainer.swift in Sources */,
 				CAE424FE224584E8005F8158 /* ViewModelType.swift in Sources */,
+				CAC574632246329900593B26 /* LoginVM.swift in Sources */,
 				CAE424E92245826C005F8158 /* ViewModelContainter.swift in Sources */,
 				CAC79BF12244CC0B007CFD38 /* SwipeVC.swift in Sources */,
 				CAE424EE224583CB005F8158 /* LoginVC.swift in Sources */,
+				CAC574742246346300593B26 /* StringExtensions.swift in Sources */,
+				CAC574812246371000593B26 /* BaseService.swift in Sources */,
+				CAC574802246371000593B26 /* BaseStorage.swift in Sources */,
 				CAC79C0022451C5E007CFD38 /* Constants.swift in Sources */,
 				CAE424DF224576F4005F8158 /* LoginRequest.swift in Sources */,
 				CAC79C0A22452717007CFD38 /* ApiEndpoint.swift in Sources */,

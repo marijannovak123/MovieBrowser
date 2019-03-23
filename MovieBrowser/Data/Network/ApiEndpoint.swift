@@ -44,7 +44,7 @@ extension ApiEndpoint: TargetType {
     var task: Task {
         switch self {
         case .login(let request):
-            return .requestCompositeData(bodyData: encodeLoginRequest(request), urlParameters: parameters)
+            return .requestCompositeData(bodyData: encodeRequest(request), urlParameters: parameters)
         default:
             return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
         }
@@ -58,7 +58,7 @@ extension ApiEndpoint: TargetType {
         return nil
     }
 
-    private func encodeLoginRequest(_ request: LoginRequest) -> Data {
+    private func encodeRequest<T: Encodable>(_ request: T) -> Data {
         let encoder = JSONEncoder()
         encoder.keyEncodingStrategy = .convertToSnakeCase
         return try! encoder.encode(request)

@@ -16,7 +16,6 @@ target 'MovieBrowser' do
     pod 'RxRealm'
     pod 'RealmSwift'
     pod 'Realm'
-    pod 'SWRevealViewController'
     pod 'RxDataSources', '~> 3.0'
     pod 'Loaf'
     pod 'Kingfisher'

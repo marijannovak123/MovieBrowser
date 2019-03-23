@@ -7,14 +7,26 @@
 //
 
 import UIKit
-import AlamofireNetworkActivityLogger
+import Swinject
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    private(set) var singletonContainer: Container!
+    private(set) var viewModelContainer: Container!
+    private(set) var viewControllerContainer: Container!
+    
+    static var instance: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        singletonContainer = SingletonContainer.build()
+        viewModelContainer = ViewModelContainer.build(singletonContainer: singletonContainer)
+        viewControllerContainer = ViewControllerContainer.build(viewModelContainer: viewModelContainer)
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = SwipeVC()
@@ -37,7 +49,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
     }
-
 
 }
 

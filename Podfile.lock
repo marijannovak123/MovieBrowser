@@ -33,7 +33,6 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.3.1)
   - Swinject (2.6.0)
-  - SWRevealViewController (2.3.0)
   - TPKeyboardAvoiding (1.3.2)
 
 DEPENDENCIES:
@@ -50,7 +49,6 @@ DEPENDENCIES:
   - RxRealm
   - RxSwift (~> 4.3.1)
   - Swinject
-  - SWRevealViewController
   - TPKeyboardAvoiding
 
 SPEC REPOS:
@@ -71,7 +69,6 @@ SPEC REPOS:
     - RxRealm
     - RxSwift
     - Swinject
-    - SWRevealViewController
     - TPKeyboardAvoiding
 
 SPEC CHECKSUMS:
@@ -91,9 +88,8 @@ SPEC CHECKSUMS:
   RxRealm: 5379eddd74f8d617ca7681d1f8d144af25b432b0
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
-  SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
 
-PODFILE CHECKSUM: 9d9e92b585ecf3c4974eec3ce886cf3f95cd020d
+PODFILE CHECKSUM: fd26e3275c608ca2d42d126ef618e737cd871eae
 
 COCOAPODS: 1.6.1
