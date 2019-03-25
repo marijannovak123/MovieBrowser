@@ -23,35 +23,63 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaD-Lg-WkS" customClass="AppButton" customModule="MovieBrowser" customModuleProvider="target">
+                    <rect key="frame" x="168.5" y="380.5" width="38" height="30"/>
+                    <state key="normal" title="Login"/>
+                </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="enl-S8-Q3T" userLabel="Username" customClass="ValidatableTextField" customModule="MovieBrowser" customModuleProvider="target">
                     <rect key="frame" x="32" y="272.5" width="311" height="30"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="image" keyPath="imageLeft" value="user"/>
+                    </userDefinedRuntimeAttributes>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Vi-oC-nKd" userLabel="Password" customClass="ValidatableTextField" customModule="MovieBrowser" customModuleProvider="target">
                     <rect key="frame" x="32" y="318.5" width="311" height="30"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="image" keyPath="imageLeft" value="password"/>
+                    </userDefinedRuntimeAttributes>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaD-Lg-WkS" customClass="AppButton" customModule="MovieBrowser" customModuleProvider="target">
-                    <rect key="frame" x="168.5" y="380.5" width="38" height="30"/>
-                    <state key="normal" title="Login"/>
-                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="Uyv-Of-mkU" userLabel="Username Image">
+                    <rect key="frame" x="42" y="275.5" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="edz-XF-PhL"/>
+                        <constraint firstAttribute="height" constant="24" id="rY2-pE-9HQ"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password" translatesAutoresizingMaskIntoConstraints="NO" id="UaF-Lo-1B5" userLabel="Password Image">
+                    <rect key="frame" x="42" y="321.5" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="J33-HV-LcO"/>
+                        <constraint firstAttribute="width" constant="24" id="ppL-Cc-SHc"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Uyv-Of-mkU" firstAttribute="leading" secondItem="enl-S8-Q3T" secondAttribute="leading" constant="10" id="CgU-md-znX"/>
                 <constraint firstItem="0Vi-oC-nKd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Eco-3m-Rq5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0Vi-oC-nKd" secondAttribute="trailing" constant="32" id="F5h-z5-f7F"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="enl-S8-Q3T" secondAttribute="trailing" constant="32" id="HfI-J7-1Kv"/>
                 <constraint firstItem="enl-S8-Q3T" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="LY7-eH-MLd"/>
+                <constraint firstItem="UaF-Lo-1B5" firstAttribute="centerY" secondItem="0Vi-oC-nKd" secondAttribute="centerY" id="e58-iR-6VA"/>
                 <constraint firstItem="0Vi-oC-nKd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="kwS-C3-fnd"/>
                 <constraint firstItem="GaD-Lg-WkS" firstAttribute="top" secondItem="0Vi-oC-nKd" secondAttribute="bottom" constant="32" id="lJl-zM-Cjz"/>
                 <constraint firstItem="0Vi-oC-nKd" firstAttribute="top" secondItem="enl-S8-Q3T" secondAttribute="bottom" constant="16" id="o0A-O8-m0v"/>
                 <constraint firstItem="GaD-Lg-WkS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="uba-am-Sb8"/>
+                <constraint firstItem="UaF-Lo-1B5" firstAttribute="leading" secondItem="0Vi-oC-nKd" secondAttribute="leading" constant="10" id="x80-qW-fVU"/>
+                <constraint firstItem="Uyv-Of-mkU" firstAttribute="centerY" secondItem="enl-S8-Q3T" secondAttribute="centerY" id="ydj-n4-jd3"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
+    <resources>
+        <image name="password" width="24" height="24"/>
+        <image name="user" width="24" height="24"/>
+    </resources>
 </document>

@@ -17,6 +17,7 @@ class LoginVC: BaseViewController<LoginVM> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "background"))
     }
 
     override func bindToViewModel() {

@@ -15,7 +15,7 @@ struct ValidatedText {
     let isValid: Bool
 }
 
-class ValidatableTextField: UITextField {
+class ValidatableTextField: AppTextField {
     
     var inputType: InputType? = .regularText // default not empty
     var isAtOriginalState: Bool = true //avoid setting error to textfield that has only been focused and no text has been entered yet
@@ -44,7 +44,7 @@ class ValidatableTextField: UITextField {
     func setError(message: String) {
         self.text = ""
         self.clearsOnBeginEditing = true
-        self.layer.borderWidth = 1.0
+        self.layer.borderWidth = 2.0
         self.layer.borderColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
     }
     
@@ -78,5 +78,6 @@ class ValidatableTextField: UITextField {
         
         return true
     }
+    
     
 }

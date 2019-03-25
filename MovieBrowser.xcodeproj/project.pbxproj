@@ -15,6 +15,7 @@
 		CA4FB1AB2248D972002F72C5 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FB1AA2248D972002F72C5 /* Validation.swift */; };
 		CA4FB1AD2248DB64002F72C5 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FB1AC2248DB64002F72C5 /* AppButton.swift */; };
 		CA4FB1AF2249023A002F72C5 /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FB1AE2249023A002F72C5 /* SessionResponse.swift */; };
+		CA4FB1B322492A9D002F72C5 /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FB1B222492A9D002F72C5 /* AppTextField.swift */; };
 		CA59D1572243DB2C0021B1DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA59D1562243DB2C0021B1DF /* AppDelegate.swift */; };
 		CA59D15E2243DB2E0021B1DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA59D15D2243DB2E0021B1DF /* Assets.xcassets */; };
 		CA59D1612243DB2E0021B1DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA59D15F2243DB2E0021B1DF /* LaunchScreen.storyboard */; };
@@ -91,6 +92,7 @@
 		CA4FB1AA2248D972002F72C5 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		CA4FB1AC2248DB64002F72C5 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		CA4FB1AE2249023A002F72C5 /* SessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponse.swift; sourceTree = "<group>"; };
+		CA4FB1B222492A9D002F72C5 /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
 		CA59D1532243DB2C0021B1DF /* MovieBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA59D1562243DB2C0021B1DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA59D15D2243DB2E0021B1DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				CAC79BFD2244FD95007CFD38 /* MovieSlide.xib */,
 				CA4FB1A72248D8B4002F72C5 /* ValidatableTextField.swift */,
 				CA4FB1AC2248DB64002F72C5 /* AppButton.swift */,
+				CA4FB1B222492A9D002F72C5 /* AppTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -769,6 +772,7 @@
 				CAC79C0022451C5E007CFD38 /* Constants.swift in Sources */,
 				CAE424DF224576F4005F8158 /* LoginRequest.swift in Sources */,
 				CAC79C0A22452717007CFD38 /* ApiEndpoint.swift in Sources */,
+				CA4FB1B322492A9D002F72C5 /* AppTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
