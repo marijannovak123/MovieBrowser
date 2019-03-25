@@ -23,7 +23,9 @@ class SwipeVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupScrollView(size: view.bounds.size)
+        DispatchQueue.main.async {
+            self.setupScrollView(size: self.view.bounds.size)
+        }
     }
     
     private func setupScrollView(size: CGSize) {

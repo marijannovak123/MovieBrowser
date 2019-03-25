@@ -10,6 +10,11 @@
 		690B029FEA2D014E8FE9492E /* Pods_MovieBrowserTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6315CED5984ABC4D3A808332 /* Pods_MovieBrowserTests.framework */; };
 		98115E3AAB844E1E960CF209 /* Pods_MovieBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C745683F95966F47161A87 /* Pods_MovieBrowser.framework */; };
 		9B94F844E9B1F2FDBF83A8C0 /* Pods_MovieBrowserUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2693C0835F76B0955873CAB8 /* Pods_MovieBrowserUITests.framework */; };
+		CA4FB1A62248D1E6002F72C5 /* Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FB1A52248D1E6002F72C5 /* Completion.swift */; };
+		CA4FB1A82248D8B4002F72C5 /* ValidatableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FB1A72248D8B4002F72C5 /* ValidatableTextField.swift */; };
+		CA4FB1AB2248D972002F72C5 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FB1AA2248D972002F72C5 /* Validation.swift */; };
+		CA4FB1AD2248DB64002F72C5 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FB1AC2248DB64002F72C5 /* AppButton.swift */; };
+		CA4FB1AF2249023A002F72C5 /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FB1AE2249023A002F72C5 /* SessionResponse.swift */; };
 		CA59D1572243DB2C0021B1DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA59D1562243DB2C0021B1DF /* AppDelegate.swift */; };
 		CA59D15E2243DB2E0021B1DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA59D15D2243DB2E0021B1DF /* Assets.xcassets */; };
 		CA59D1612243DB2E0021B1DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA59D15F2243DB2E0021B1DF /* LaunchScreen.storyboard */; };
@@ -81,6 +86,11 @@
 		A4A9CE6FF246D0B0E298CD34 /* Pods-MovieBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBrowser.debug.xcconfig"; path = "Target Support Files/Pods-MovieBrowser/Pods-MovieBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 		AEE6DE00E3F0E7B31680DBB6 /* Pods-MovieBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBrowserTests.release.xcconfig"; path = "Target Support Files/Pods-MovieBrowserTests/Pods-MovieBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
 		B6C4EC10AB6EBE5C0D171F07 /* Pods-MovieBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBrowserTests.debug.xcconfig"; path = "Target Support Files/Pods-MovieBrowserTests/Pods-MovieBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CA4FB1A52248D1E6002F72C5 /* Completion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Completion.swift; sourceTree = "<group>"; };
+		CA4FB1A72248D8B4002F72C5 /* ValidatableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatableTextField.swift; sourceTree = "<group>"; };
+		CA4FB1AA2248D972002F72C5 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		CA4FB1AC2248DB64002F72C5 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
+		CA4FB1AE2249023A002F72C5 /* SessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponse.swift; sourceTree = "<group>"; };
 		CA59D1532243DB2C0021B1DF /* MovieBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA59D1562243DB2C0021B1DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA59D15D2243DB2E0021B1DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -182,6 +192,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CA4FB1A92248D952002F72C5 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				CA4FB1AA2248D972002F72C5 /* Validation.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		CA59D14A2243DB2C0021B1DF = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +225,7 @@
 		CA59D1552243DB2C0021B1DF /* MovieBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				CA4FB1A92248D952002F72C5 /* Util */,
 				CAC57464224632F400593B26 /* Repository */,
 				CAE424F222458416005F8158 /* Common */,
 				CAE424E52245821D005F8158 /* DI */,
@@ -305,6 +324,8 @@
 			children = (
 				CAC79BFB2244FD20007CFD38 /* MovieSlide.swift */,
 				CAC79BFD2244FD95007CFD38 /* MovieSlide.xib */,
+				CA4FB1A72248D8B4002F72C5 /* ValidatableTextField.swift */,
+				CA4FB1AC2248DB64002F72C5 /* AppButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -372,6 +393,7 @@
 			children = (
 				CAC5748722463BA900593B26 /* TokenResponse.swift */,
 				CAC5748922463C2000593B26 /* BaseResponse.swift */,
+				CA4FB1AE2249023A002F72C5 /* SessionResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -442,6 +464,7 @@
 			children = (
 				CAC574772246351700593B26 /* Screen.swift */,
 				CAE4250222458563005F8158 /* UIResult.swift */,
+				CA4FB1A52248D1E6002F72C5 /* Completion.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -717,10 +740,13 @@
 				CAC79C0222451C8C007CFD38 /* Colors.swift in Sources */,
 				CAC57469224633CA00593B26 /* DatabaseManager.swift in Sources */,
 				CAC574732246346300593B26 /* TableViewExtensions.swift in Sources */,
+				CA4FB1A62248D1E6002F72C5 /* Completion.swift in Sources */,
 				CAE424E122457CA2005F8158 /* Network.swift in Sources */,
 				CAC5747D224636EC00593B26 /* AuthService.swift in Sources */,
 				CAC79BFC2244FD20007CFD38 /* MovieSlide.swift in Sources */,
+				CA4FB1AB2248D972002F72C5 /* Validation.swift in Sources */,
 				CAE42500224584E8005F8158 /* DomainData.swift in Sources */,
+				CA4FB1A82248D8B4002F72C5 /* ValidatableTextField.swift in Sources */,
 				CAE424F6224584B3005F8158 /* BaseViewController.swift in Sources */,
 				CAC574752246346300593B26 /* ViewControllerExtensions.swift in Sources */,
 				CAC574712246346300593B26 /* RealmExtensions.swift in Sources */,
@@ -729,9 +755,11 @@
 				CAE424EA2245826C005F8158 /* SingletonContainer.swift in Sources */,
 				CAC574842246374800593B26 /* AuthStorage.swift in Sources */,
 				CAE424EB2245826C005F8158 /* ViewControllerContainer.swift in Sources */,
+				CA4FB1AD2248DB64002F72C5 /* AppButton.swift in Sources */,
 				CAE424FE224584E8005F8158 /* ViewModelType.swift in Sources */,
 				CAC574632246329900593B26 /* LoginVM.swift in Sources */,
 				CAC5748A22463C2000593B26 /* BaseResponse.swift in Sources */,
+				CA4FB1AF2249023A002F72C5 /* SessionResponse.swift in Sources */,
 				CAE424E92245826C005F8158 /* ViewModelContainter.swift in Sources */,
 				CAC79BF12244CC0B007CFD38 /* SwipeVC.swift in Sources */,
 				CAE424EE224583CB005F8158 /* LoginVC.swift in Sources */,

@@ -10,10 +10,9 @@ import RxSwift
 
 class AuthStorage: BaseStorage {
     
-    func saveToken(response: TokenResponse) -> Observable<Void> {
-        return Completable.fromAction {
-            self.defaults.token = response.requestToken
-            self.defaults.expiresAt = response.expiresAt
-        }.asObservable().mapToVoid()
+    func saveSession(response: SessionResponse) -> Observable<Void> {
+        return Observable<Void>.fromAction {
+            self.defaults.sessionId = response.sessionId
+        }
     }
 }

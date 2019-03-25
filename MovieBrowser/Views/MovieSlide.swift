@@ -17,7 +17,7 @@ class MovieSlide: UIView {
     static func create(title: String, posterURL: String) -> MovieSlide {
         let slide = Bundle.main.loadNibNamed("MovieSlide", owner: self, options: nil)?.first as! MovieSlide
         slide.lTitle.text = title
-        slide.ivPoster.kf.setImage(with: URL(string: posterURL), placeholder: #imageLiteral(resourceName: "movie"))
+        slide.ivPoster.kf.setImage(with: URL(string: posterURL))
         return slide
     }
 }

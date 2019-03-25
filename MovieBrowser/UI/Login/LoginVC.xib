@@ -13,6 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginVC" customModule="MovieBrowser" customModuleProvider="target">
             <connections>
                 <outlet property="bLogin" destination="GaD-Lg-WkS" id="yxy-qO-3jc"/>
+                <outlet property="tfPassword" destination="0Vi-oC-nKd" id="TgP-sY-62M"/>
+                <outlet property="tfUsername" destination="enl-S8-Q3T" id="yhj-RA-9C3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,13 +23,34 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaD-Lg-WkS">
-                    <rect key="frame" x="175" y="280" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="enl-S8-Q3T" userLabel="Username" customClass="ValidatableTextField" customModule="MovieBrowser" customModuleProvider="target">
+                    <rect key="frame" x="32" y="272.5" width="311" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Vi-oC-nKd" userLabel="Password" customClass="ValidatableTextField" customModule="MovieBrowser" customModuleProvider="target">
+                    <rect key="frame" x="32" y="318.5" width="311" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaD-Lg-WkS" customClass="AppButton" customModule="MovieBrowser" customModuleProvider="target">
+                    <rect key="frame" x="168.5" y="380.5" width="38" height="30"/>
+                    <state key="normal" title="Login"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0Vi-oC-nKd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Eco-3m-Rq5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0Vi-oC-nKd" secondAttribute="trailing" constant="32" id="F5h-z5-f7F"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="enl-S8-Q3T" secondAttribute="trailing" constant="32" id="HfI-J7-1Kv"/>
+                <constraint firstItem="enl-S8-Q3T" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="LY7-eH-MLd"/>
+                <constraint firstItem="0Vi-oC-nKd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="kwS-C3-fnd"/>
+                <constraint firstItem="GaD-Lg-WkS" firstAttribute="top" secondItem="0Vi-oC-nKd" secondAttribute="bottom" constant="32" id="lJl-zM-Cjz"/>
+                <constraint firstItem="0Vi-oC-nKd" firstAttribute="top" secondItem="enl-S8-Q3T" secondAttribute="bottom" constant="16" id="o0A-O8-m0v"/>
+                <constraint firstItem="GaD-Lg-WkS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="uba-am-Sb8"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>

@@ -11,6 +11,7 @@ import Moya
 enum ApiEndpoint {
     case newToken
     case login(request: LoginRequest)
+    case createSession(requestToken: String)
 }
 
 extension ApiEndpoint: TargetType {
@@ -25,12 +26,14 @@ extension ApiEndpoint: TargetType {
             return "authentication/token/new"
         case .login:
             return "authentication/token/validate_with_login"
+        case .createSession:
+            return "authentication/session/new"
         }
     }
     
     var method: Method {
         switch self {
-        case .login:
+        case .login, .createSession:
             return .post
         default:
             return .get
@@ -44,23 +47,36 @@ extension ApiEndpoint: TargetType {
     var task: Task {
         switch self {
         case .login(let request):
-            return .requestCompositeData(bodyData: encodeRequest(request), urlParameters: parameters)
+            return .requestCompositeParameters(bodyParameters: encodeRequest(request), bodyEncoding: JSONEncoding.default, urlParameters: authParameters)
+        case .createSession(let token):
+            return .requestCompositeParameters(bodyParameters: ["request_token": token], bodyEncoding: JSONEncoding.default, urlParameters: authParameters)
         default:
-            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
+            return .requestParameters(parameters: authParameters, encoding: URLEncoding.default)
         }
     }
     
-    var parameters: [String : Any] {
+    var authParameters: [String : Any] {
         return ["api_key": Constants.apiKey]
+    }
+    
+    var accParameters: [String: Any] {
+        return ["api_key": Constants.apiKey, "session_id": sessionId]
     }
     
     var headers: [String : String]? {
         return nil
     }
 
-    private func encodeRequest<T: Encodable>(_ request: T) -> Data {
+    private func encodeRequest<T: Encodable>(_ request: T) -> [String: Any] {
         let encoder = JSONEncoder()
         encoder.keyEncodingStrategy = .convertToSnakeCase
-        return try! encoder.encode(request)
+        let data = try! encoder.encode(request)
+        return try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
     }
+    
+    private var sessionId: String {
+        let defaults = AppDelegate.instance.singletonContainer.resolve(UserDefaultsHelper.self)!
+        return defaults.sessionId
+    }
+    
 }

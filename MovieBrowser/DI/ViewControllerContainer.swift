@@ -16,6 +16,10 @@ class ViewControllerContainer {
         container.register(LoginVC.self) {
             LoginVC(viewModel: $0.resolve(LoginVM.self)!)
         }
+        
+        container.register(SwipeVC.self) { _ in
+            SwipeVC()
+        }
        
         return container
     }

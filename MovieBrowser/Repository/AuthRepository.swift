@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import Moya
 
 class AuthRepository {
     
@@ -18,12 +19,15 @@ class AuthRepository {
         self.storage = storage
     }
     
-    func login(username: String, password: String) -> Observable<Bool> {
+    func login(username: String, password: String) -> Observable<Completion> {
         return service.requestNewToken()
             .flatMap {
                 self.service.login(request: LoginRequest(username: username, password: password, requestToken: $0.requestToken))
-            }.flatMap {
-                self.storage.saveToken(response: $0)
-            }.map { _ in true }
+            }.flatMap { tokenResponse in
+                self.service.createSession(requestToken: tokenResponse.requestToken)
+            }.flatMap { sessionIdResponse in
+                self.storage.saveSession(response: sessionIdResponse)
+            }.map { _ in Completion.success }
+            .catchErrorJustReturn(.failure)
     }
 }

@@ -13,8 +13,8 @@ class LoginVM: ViewModelType {
     
     struct Input {
         let loginTrigger: Driver<Void>
-        let username: Driver<String>
-        let password: Driver<String>
+        let username: Driver<ValidatedText>
+        let password: Driver<ValidatedText>
     }
     
     struct Output {
@@ -31,16 +31,19 @@ class LoginVM: ViewModelType {
         let loginResult = input.loginTrigger
             .withLatestFrom (
                 Driver.combineLatest(input.username, input.password)
-            ).asObservable()
-            .flatMap { (parameters) -> Observable<Bool> in
+            ).filter { (input) in
+                let (usernameInput, passwordInput) = input
+                return usernameInput.isValid && passwordInput.isValid
+            }.asObservable()
+            .flatMap { (parameters) -> Observable<Completion> in
                 let (username, password) = parameters
-                return self.repository.login(username: username, password: password)
-                    .catchErrorJustReturn(false)
+                return self.repository.login(username: username.value!, password: password.value!)
             }.map {
-                if $0 {
-                   return UIResult.success("Good")
-                } else {
-                    return UIResult.error("No good")
+                switch $0 {
+                case .success:
+                    return UIResult.success("Successfully logged in!")
+                case .failure:
+                    return UIResult.error("Error logging in")
                 }
             }.asDriver(onErrorJustReturn: UIResult.error(""))
         

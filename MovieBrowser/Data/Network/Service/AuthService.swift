@@ -19,4 +19,7 @@ class AuthService: BaseService {
         return api.request(target: .login(request: request), responseType: TokenResponse.self)
     }
     
+    func createSession(requestToken: String) -> Observable<SessionResponse> {
+        return api.request(target: .createSession(requestToken: requestToken), responseType: SessionResponse.self)
+    }
 }

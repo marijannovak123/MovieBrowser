@@ -79,4 +79,11 @@ extension ObservableType {
         return map { _ in }
     }
 
+    static func fromAction(block: @escaping () -> Void) -> Observable<Void> {
+        return Observable.just(())
+            .do(onNext: {
+                block()
+            }
+        )
+    }
 }

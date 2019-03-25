@@ -10,22 +10,26 @@ import Foundation
 
 class UserDefaultsHelper {
     
-    var token: String {
+    var sessionId: String {
         get {
-            return UserDefaults.standard.value(forKey: Constants.keyToken) as! String
+            return getValue(for: Constants.sessionId) ?? ""
         }
+        
         set {
-            UserDefaults.standard.setValue(newValue, forKey: Constants.keyToken)
+            setValue(newValue, for: Constants.sessionId)
         }
     }
     
-    var expiresAt: String {
-        get {
-            return UserDefaults.standard.value(forKey: Constants.expiresAt) as! String
-        }
-        set {
-            UserDefaults.standard.setValue(newValue, forKey: Constants.expiresAt)
-        }
+    var isLoggedIn: Bool {
+        return !sessionId.isEmpty
+    }
+    
+    func getValue<T>(for key: String) -> T {
+        return UserDefaults.standard.value(forKey: key) as! T
+    }
+    
+    func setValue<T>(_ value: T, for key: String) {
+        UserDefaults.standard.setValue(value, forKey: key)
     }
     
 }

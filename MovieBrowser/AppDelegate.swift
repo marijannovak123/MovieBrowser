@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         viewControllerContainer = ViewControllerContainer.build(viewModelContainer: viewModelContainer)
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = viewControllerContainer.resolve(LoginVC.self)!
+        window?.rootViewController = getRootVC()
         window?.makeKeyAndVisible()
             
         return true
@@ -50,5 +50,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
     }
 
+    private func getRootVC() -> UIViewController {
+        let defaults = singletonContainer.resolve(UserDefaultsHelper.self)!
+        if defaults.isLoggedIn {
+            return viewControllerContainer.resolve(SwipeVC.self)!
+        } else {
+            return viewControllerContainer.resolve(LoginVC.self)!
+        }
+    }
 }
 
