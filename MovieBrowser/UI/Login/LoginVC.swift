@@ -46,6 +46,10 @@ class LoginVC: BaseViewController<LoginVM> {
                 self.navigate(to: .swipe)
             }
         }).disposed(by: disposeBag)
+        
+        output.isLoading.drive(onNext: {
+            self.showLoading($0)
+        }).disposed(by: disposeBag)
     }
     
     private func changeInitialInputState() {

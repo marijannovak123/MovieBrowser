@@ -22,7 +22,5 @@ class Constants {
         return ""
     }
     
-    public static let keyToken = "token"
-    public static let expiresAt = "expiresAt"
     public static let sessionId = "sessionId"
 }
