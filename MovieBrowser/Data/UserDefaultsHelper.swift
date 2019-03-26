@@ -24,8 +24,8 @@ class UserDefaultsHelper {
         return !sessionId.isEmpty
     }
     
-    func getValue<T>(for key: String) -> T {
-        return UserDefaults.standard.value(forKey: key) as! T
+    func getValue<T>(for key: String) -> T? {
+        return UserDefaults.standard.value(forKey: key) as! T?
     }
     
     func setValue<T>(_ value: T, for key: String) {
