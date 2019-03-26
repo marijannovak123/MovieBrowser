@@ -21,8 +21,6 @@
 		CA59D1612243DB2E0021B1DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA59D15F2243DB2E0021B1DF /* LaunchScreen.storyboard */; };
 		CA59D16C2243DB2E0021B1DF /* MovieBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA59D16B2243DB2E0021B1DF /* MovieBrowserTests.swift */; };
 		CA59D1772243DB2E0021B1DF /* MovieBrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA59D1762243DB2E0021B1DF /* MovieBrowserUITests.swift */; };
-		CAA26387224A4AC000E6FB4D /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA26386224A4AC000E6FB4D /* InputTextField.swift */; };
-		CAA26389224A4ADA00E6FB4D /* InputTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAA26388224A4ADA00E6FB4D /* InputTextField.xib */; };
 		CAC574632246329900593B26 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC574622246329900593B26 /* LoginVM.swift */; };
 		CAC574662246333200593B26 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC574652246333200593B26 /* AuthRepository.swift */; };
 		CAC57469224633CA00593B26 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC57468224633CA00593B26 /* DatabaseManager.swift */; };
@@ -106,8 +104,6 @@
 		CA59D1722243DB2E0021B1DF /* MovieBrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieBrowserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA59D1762243DB2E0021B1DF /* MovieBrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieBrowserUITests.swift; sourceTree = "<group>"; };
 		CA59D1782243DB2E0021B1DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CAA26386224A4AC000E6FB4D /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
-		CAA26388224A4ADA00E6FB4D /* InputTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputTextField.xib; sourceTree = "<group>"; };
 		CAC574622246329900593B26 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 		CAC574652246333200593B26 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		CAC57468224633CA00593B26 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
@@ -333,8 +329,6 @@
 				CA4FB1A72248D8B4002F72C5 /* ValidatableTextField.swift */,
 				CA4FB1AC2248DB64002F72C5 /* AppButton.swift */,
 				CA4FB1B222492A9D002F72C5 /* AppTextField.swift */,
-				CAA26386224A4AC000E6FB4D /* InputTextField.swift */,
-				CAA26388224A4ADA00E6FB4D /* InputTextField.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -550,13 +544,16 @@
 				TargetAttributes = {
 					CA59D1522243DB2C0021B1DF = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					CA59D1662243DB2E0021B1DF = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = CA59D1522243DB2C0021B1DF;
 					};
 					CA59D1712243DB2E0021B1DF = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = CA59D1522243DB2C0021B1DF;
 					};
 				};
@@ -588,7 +585,6 @@
 			files = (
 				CAE424EF224583CB005F8158 /* LoginVC.xib in Resources */,
 				CAC79BFE2244FD95007CFD38 /* MovieSlide.xib in Resources */,
-				CAA26389224A4ADA00E6FB4D /* InputTextField.xib in Resources */,
 				CAC79C0C2245296C007CFD38 /* Keys.plist in Resources */,
 				CAC79BF22244CC0B007CFD38 /* SwipeVC.xib in Resources */,
 				CA59D1612243DB2E0021B1DF /* LaunchScreen.storyboard in Resources */,
@@ -762,7 +758,6 @@
 				CAC574712246346300593B26 /* RealmExtensions.swift in Sources */,
 				CAE4250322458563005F8158 /* UIResult.swift in Sources */,
 				CAC57486224638B300593B26 /* UserDefaultsHelper.swift in Sources */,
-				CAA26387224A4AC000E6FB4D /* InputTextField.swift in Sources */,
 				CAE424EA2245826C005F8158 /* SingletonContainer.swift in Sources */,
 				CAC574842246374800593B26 /* AuthStorage.swift in Sources */,
 				CAE424EB2245826C005F8158 /* ViewControllerContainer.swift in Sources */,
@@ -957,7 +952,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Novak.MovieBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -976,7 +971,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Novak.MovieBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -997,7 +992,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Novak.MovieBrowserTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MovieBrowser.app/MovieBrowser";
 			};
@@ -1019,7 +1014,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Novak.MovieBrowserTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MovieBrowser.app/MovieBrowser";
 			};
@@ -1040,7 +1035,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Novak.MovieBrowserUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = MovieBrowser;
 			};
@@ -1061,7 +1056,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Novak.MovieBrowserUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = MovieBrowser;
 			};

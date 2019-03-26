@@ -14,10 +14,15 @@ class LoginVC: BaseViewController<LoginVM> {
     @IBOutlet weak var bLogin: UIButton!
     @IBOutlet weak var tfUsername: ValidatableTextField!
     @IBOutlet weak var tfPassword: ValidatableTextField!
+    @IBOutlet weak var lUsernameError: UILabel!
+    @IBOutlet weak var lPasswordError: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "background"))
+        
+        tfUsername.errorLabel = lUsernameError
+        tfPassword.errorLabel = lPasswordError
     }
 
     override func bindToViewModel() {

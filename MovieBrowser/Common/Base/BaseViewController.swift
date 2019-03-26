@@ -22,6 +22,7 @@ class BaseViewController<V>: UIViewController where V: ViewModelType {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        makeKeyboardDismissable()
         bindToViewModel()
     }
     
@@ -65,4 +66,11 @@ class BaseViewController<V>: UIViewController where V: ViewModelType {
         Loaf(message, state: .warning, sender: self).show(.short)
     }
     
+    func makeKeyboardDismissable() {
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

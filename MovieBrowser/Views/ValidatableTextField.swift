@@ -17,8 +17,17 @@ struct ValidatedText {
 
 class ValidatableTextField: AppTextField {
     
-    var inputType: InputType? = .regularText // default not empty
-    var isAtOriginalState: Bool = true //avoid setting error to textfield that has only been focused and no text has been entered yet
+    weak var errorLabel: UILabel? {
+        didSet {
+            errorLabel?.isHidden = true
+        }
+    }
+    
+    // default not empty
+    var inputType: InputType? = .regularText
+    
+    //avoid setting error to textfield that has only been focused and no text has been entered yet
+    var isAtOriginalState: Bool = true
     
     var validatedText: Driver<ValidatedText> {
         return self.rx.text.asDriver()
@@ -33,6 +42,10 @@ class ValidatableTextField: AppTextField {
     func setValidState() {
         self.clearsOnBeginEditing = false
         self.layer.borderWidth = 0
+        if let label = errorLabel {
+            label.text = ""
+            label.isHidden = true
+        }
     }
     
     func setFailedValidation(_ failedValidation: ValidationType) {
@@ -42,6 +55,10 @@ class ValidatableTextField: AppTextField {
     }
     
     func setError(message: String) {
+        if let label = errorLabel {
+            label.text = message
+            label.isHidden = false
+        }
         self.text = ""
         self.clearsOnBeginEditing = true
         self.layer.borderWidth = 2.0
@@ -78,6 +95,5 @@ class ValidatableTextField: AppTextField {
         
         return true
     }
-    
     
 }
