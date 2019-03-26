@@ -35,10 +35,12 @@ class LoginVM: ViewModelType {
         let loginResult = input.loginTrigger
             .withLatestFrom (
                 Driver.combineLatest(input.username, input.password)
-            ).filter { (input) in
+            )
+            .filter { (input) in
                 let (usernameInput, passwordInput) = input
                 return usernameInput.isValid && passwordInput.isValid
-            }.do(onNext: { _ in self.isLoadingRelay.accept(true) })
+            }
+            .do(onNext: { _ in self.isLoadingRelay.accept(true) })
             .asObservable()
             .flatMap { (parameters) -> Observable<Completion> in
                 let (username, password) = parameters
@@ -48,9 +50,10 @@ class LoginVM: ViewModelType {
                 case .success:
                     return UIResult.success("Successfully logged in!")
                 case .failure:
-                    return UIResult.error("Error logging in")
+                    return UIResult.error("Error logging in") // transfer error message through Result enum and display it 
                 }
-            }.do (
+            }
+            .do (
                 onNext: { _ in self.isLoadingRelay.accept(false) },
                 onError: { _ in self.isLoadingRelay.accept(false) }
             )
