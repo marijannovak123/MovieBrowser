@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -59,6 +59,13 @@
                         <constraint firstAttribute="width" constant="24" id="ppL-Cc-SHc"/>
                     </constraints>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jc0-74-GTu" customClass="InputTextField" customModule="MovieBrowser" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="20" width="375" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="EVe-tA-Nsr"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -67,11 +74,14 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0Vi-oC-nKd" secondAttribute="trailing" constant="32" id="F5h-z5-f7F"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="enl-S8-Q3T" secondAttribute="trailing" constant="32" id="HfI-J7-1Kv"/>
                 <constraint firstItem="enl-S8-Q3T" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="LY7-eH-MLd"/>
+                <constraint firstItem="jc0-74-GTu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="abV-Jy-3h1"/>
                 <constraint firstItem="UaF-Lo-1B5" firstAttribute="centerY" secondItem="0Vi-oC-nKd" secondAttribute="centerY" id="e58-iR-6VA"/>
                 <constraint firstItem="0Vi-oC-nKd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="kwS-C3-fnd"/>
                 <constraint firstItem="GaD-Lg-WkS" firstAttribute="top" secondItem="0Vi-oC-nKd" secondAttribute="bottom" constant="32" id="lJl-zM-Cjz"/>
                 <constraint firstItem="0Vi-oC-nKd" firstAttribute="top" secondItem="enl-S8-Q3T" secondAttribute="bottom" constant="16" id="o0A-O8-m0v"/>
+                <constraint firstItem="jc0-74-GTu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="oC5-c1-Is7"/>
                 <constraint firstItem="GaD-Lg-WkS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="uba-am-Sb8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jc0-74-GTu" secondAttribute="trailing" id="vSt-He-D3d"/>
                 <constraint firstItem="UaF-Lo-1B5" firstAttribute="leading" secondItem="0Vi-oC-nKd" secondAttribute="leading" constant="10" id="x80-qW-fVU"/>
                 <constraint firstItem="Uyv-Of-mkU" firstAttribute="centerY" secondItem="enl-S8-Q3T" secondAttribute="centerY" id="ydj-n4-jd3"/>
             </constraints>
