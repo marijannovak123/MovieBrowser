@@ -80,8 +80,33 @@ extension ObservableType {
     }
 
     static func fromAction(block: @escaping () -> Void) -> Observable<Void> {
-        return Observable.deferred {
-            .just(block())
+        return Observable.deferred {.just(block())}
+    }
+    
+    func flatMapToResult(_ selector: @escaping (E) throws -> Observable<AnyResult>) -> Observable<AnyResult> {
+        return self.flatMap {
+            try selector($0).catchError { error in
+                .just(.failure(error))
+            }
         }
     }
+}
+
+typealias AnyResult = Result<Any, Error>
+
+extension ObservableType where E == AnyResult {
+    
+    func flatMapResult(_ selector: @escaping (AnyResult) throws -> Observable<AnyResult>) -> Observable<AnyResult> {
+        return self.flatMap { (result: AnyResult) -> Observable<AnyResult> in
+            switch result {
+            case .success:
+                return try selector(result).catchError { error in
+                    .just(.failure(error))
+                }
+            case .failure(let error):
+                return .just(.failure(error))
+            }
+        }
+    }
+
 }

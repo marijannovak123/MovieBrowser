@@ -47,14 +47,25 @@ class SingletonContainer {
             AuthService(api: $0.resolve(ApiNetwork.self)!)
         }
         
+        container.register(MediaService.self) {
+            MediaService(api: $0.resolve(ApiNetwork.self)!)
+        }
         // MARK: Storages
         container.register(AuthStorage.self) {
             AuthStorage(dbManager: $0.resolve(DatabaseManager.self)!, defaults: $0.resolve(UserDefaultsHelper.self)!)
         }
         
+        container.register(MediaStorage.self) {
+            MediaStorage(dbManager: $0.resolve(DatabaseManager.self)!, defaults: $0.resolve(UserDefaultsHelper.self)!)
+        }
+        
         // MARK: Repositories
         container.register(AuthRepository.self) {
             AuthRepository(service: $0.resolve(AuthService.self)!, storage: $0.resolve(AuthStorage.self)!)
+        }
+        
+        container.register(SyncRepository.self) {
+            SyncRepository(service: $0.resolve(MediaService.self)!, storage: $0.resolve(MediaStorage.self)!)
         }
         
         return container

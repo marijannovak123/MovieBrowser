@@ -14,12 +14,10 @@ struct Show: DomainData {
     let episodeRunTime: [Int]?
     let firstAirDate: String?
     let genres: [Genre]?
-    let languages: [String]?
     let lastAirDate: String?
     let name: String?
     let numberOfEpisodes: Int?
     let numberOfSeasons: Int?
-    let originCountry: [String]?
     let originalLanguage: String?
     let originalName: String?
     let overview: String?
@@ -36,6 +34,23 @@ struct Show: DomainData {
     
     func asDatabaseType() -> DBShow {
         let dbShow = DBShow()
+        dbShow.id = self.id
+        dbShow.episodeRunTime = self.episodeRunTime ?? []
+        dbShow.firstAirDate = self.firstAirDate
+        dbShow.genres = self.genres?.asDatabaseType() ?? []
+        dbShow.lastAirDate = self.lastAirDate
+        dbShow.name = self.name
+        dbShow.numberOfEpisodes = self.numberOfEpisodes ?? 0
+        dbShow.numberOfSeasons = self.numberOfSeasons ?? 0
+        dbShow.originalLanguage =  self.originalLanguage
+        dbShow.originalName = self.originalName
+        dbShow.overview = self.overview
+        dbShow.popularity = self.popularity ?? 0.0
+        dbShow.posterPath = self.posterPath
+        dbShow.status = self.status
+        dbShow.type = self.type
+        dbShow.voteAverage = self.voteAverage ?? 0.0
+        dbShow.voteCount = self.voteCount ?? 0
         return dbShow
     }
     

@@ -14,7 +14,7 @@ class ViewModelContainer {
         let container = Container(parent: singletonContainer)
         
         container.register(LoginVM.self) {
-            LoginVM(repository: $0.resolve(AuthRepository.self)!)
+            LoginVM(repository: $0.resolve(AuthRepository.self)!, syncRepository: $0.resolve(SyncRepository.self)!)
         }
         
         return container

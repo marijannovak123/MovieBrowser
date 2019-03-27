@@ -10,15 +10,13 @@ import Foundation
 
 class DBShow: BaseModel, Persistable {
     
-    @objc dynamic var episodeRunTime: [Int]?
+    var episodeRunTime = [Int]()
     @objc dynamic var firstAirDate: String?
-    @objc dynamic var genres: [DBGenre]?
-    @objc dynamic var languages: [String]?
+    var genres = [DBGenre]()
     @objc dynamic var lastAirDate: String?
     @objc dynamic var name: String?
     @objc dynamic var numberOfEpisodes = 0
     @objc dynamic var numberOfSeasons = 0
-    @objc dynamic var originCountry: [String]?
     @objc dynamic var originalLanguage: String?
     @objc dynamic var originalName: String?
     @objc dynamic var overview: String?
@@ -30,7 +28,7 @@ class DBShow: BaseModel, Persistable {
     @objc dynamic var voteCount = 0
     
     func asDomain() -> Show {
-        return Show(id: self.id, episodeRunTime: self.episodeRunTime, firstAirDate: self.firstAirDate, genres: self.genres?.asDomain(), languages: self.languages, lastAirDate: self.lastAirDate, name: self.name, numberOfEpisodes: self.numberOfEpisodes, numberOfSeasons: self.numberOfSeasons, originCountry: self.originCountry, originalLanguage: self.originalLanguage, originalName: self.originalName, overview: self.overview, popularity: self.popularity, posterPath: self.posterPath, status: self.status, type: self.type, voteAverage: self.voteAverage, voteCount: self.voteCount)
+        return Show(id: self.id, episodeRunTime: self.episodeRunTime, firstAirDate: self.firstAirDate, genres: self.genres.asDomain(), lastAirDate: self.lastAirDate, name: self.name, numberOfEpisodes: self.numberOfEpisodes, numberOfSeasons: self.numberOfSeasons, originalLanguage: self.originalLanguage, originalName: self.originalName, overview: self.overview, popularity: self.popularity, posterPath: self.posterPath, status: self.status, type: self.type, voteAverage: self.voteAverage, voteCount: self.voteCount)
     }
     
 }

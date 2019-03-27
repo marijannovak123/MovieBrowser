@@ -13,8 +13,15 @@ struct Genre: DomainData {
     let id: Int
     let name: String
     
+    var isMovieGenre: Bool?
+    
     var uid: Int {
        return id
+    }
+    
+    init(id: Int, name: String) {
+        self.id = id
+        self.name = name
     }
     
     func asDatabaseType() -> DBGenre {

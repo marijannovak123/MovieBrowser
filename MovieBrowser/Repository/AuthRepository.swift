@@ -19,7 +19,7 @@ class AuthRepository {
         self.storage = storage
     }
     
-    func login(username: String, password: String) -> Observable<Completion> {
+    func login(username: String, password: String) -> Observable<Void> {
         return service.requestNewToken()
             .flatMap {
                 self.service.login(request: LoginRequest(username: username, password: password, requestToken: $0.requestToken))
@@ -27,7 +27,6 @@ class AuthRepository {
                 self.service.createSession(requestToken: tokenResponse.requestToken)
             }.flatMap { sessionIdResponse in
                 self.storage.saveSession(response: sessionIdResponse)
-            }.map { _ in Completion.success }
-            .catchErrorJustReturn(.failure)
+            }
     }
 }

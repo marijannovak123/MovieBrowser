@@ -55,6 +55,10 @@
 		CACF7133224B6ECF001B6632 /* DBGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACF7132224B6ECF001B6632 /* DBGenre.swift */; };
 		CACF7135224B6ED9001B6632 /* DBShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACF7134224B6ED9001B6632 /* DBShow.swift */; };
 		CACF7137224B6EE1001B6632 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACF7136224B6EE1001B6632 /* Show.swift */; };
+		CACF713B224B993B001B6632 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACF7139224B993B001B6632 /* MainVC.swift */; };
+		CACF713C224B993B001B6632 /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CACF713A224B993B001B6632 /* MainVC.xib */; };
+		CACF713E224B9D16001B6632 /* SyncRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACF713D224B9D16001B6632 /* SyncRepository.swift */; };
+		CACF7140224BC797001B6632 /* GenresResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACF713F224BC797001B6632 /* GenresResponse.swift */; };
 		CAE424DF224576F4005F8158 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424DE224576F4005F8158 /* LoginRequest.swift */; };
 		CAE424E122457CA2005F8158 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424E022457CA2005F8158 /* Network.swift */; };
 		CAE424E92245826C005F8158 /* ViewModelContainter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424E62245826B005F8158 /* ViewModelContainter.swift */; };
@@ -148,6 +152,10 @@
 		CACF7132224B6ECF001B6632 /* DBGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBGenre.swift; sourceTree = "<group>"; };
 		CACF7134224B6ED9001B6632 /* DBShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBShow.swift; sourceTree = "<group>"; };
 		CACF7136224B6EE1001B6632 /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
+		CACF7139224B993B001B6632 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		CACF713A224B993B001B6632 /* MainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
+		CACF713D224B9D16001B6632 /* SyncRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncRepository.swift; sourceTree = "<group>"; };
+		CACF713F224BC797001B6632 /* GenresResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresResponse.swift; sourceTree = "<group>"; };
 		CAE424DE224576F4005F8158 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		CAE424E022457CA2005F8158 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		CAE424E62245826B005F8158 /* ViewModelContainter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelContainter.swift; sourceTree = "<group>"; };
@@ -286,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				CAC574652246333200593B26 /* AuthRepository.swift */,
+				CACF713D224B9D16001B6632 /* SyncRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -373,6 +382,7 @@
 		CAC79C05224521E5007CFD38 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				CACF7138224B9917001B6632 /* Main */,
 				CAE424F1224583FC005F8158 /* Login */,
 				CAE424F0224583E9005F8158 /* Posters */,
 			);
@@ -398,6 +408,15 @@
 				CAE424E022457CA2005F8158 /* Network.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		CACF7138224B9917001B6632 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CACF7139224B993B001B6632 /* MainVC.swift */,
+				CACF713A224B993B001B6632 /* MainVC.xib */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		CAE424DC224576B6005F8158 /* Models */ = {
@@ -427,6 +446,7 @@
 				CAC5748722463BA900593B26 /* TokenResponse.swift */,
 				CAC5748922463C2000593B26 /* BaseResponse.swift */,
 				CA4FB1AE2249023A002F72C5 /* SessionResponse.swift */,
+				CACF713F224BC797001B6632 /* GenresResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -618,6 +638,7 @@
 				CAC79C0C2245296C007CFD38 /* Keys.plist in Resources */,
 				CAC79BF22244CC0B007CFD38 /* SwipeVC.xib in Resources */,
 				CA59D1612243DB2E0021B1DF /* LaunchScreen.storyboard in Resources */,
+				CACF713C224B993B001B6632 /* MainVC.xib in Resources */,
 				CA59D15E2243DB2E0021B1DF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -663,6 +684,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxKingfisher/RxKingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
 			);
@@ -685,6 +707,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxKingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftExt.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
 			);
@@ -767,7 +790,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAE424FF224584E8005F8158 /* Persistable.swift in Sources */,
+				CACF713B224B993B001B6632 /* MainVC.swift in Sources */,
 				CAC574662246333200593B26 /* AuthRepository.swift in Sources */,
+				CACF7140224BC797001B6632 /* GenresResponse.swift in Sources */,
 				CAE424FD224584E8005F8158 /* ReusableCell.swift in Sources */,
 				CA59D1572243DB2C0021B1DF /* AppDelegate.swift in Sources */,
 				CAC574782246351700593B26 /* Screen.swift in Sources */,
@@ -803,6 +828,7 @@
 				CAC574632246329900593B26 /* LoginVM.swift in Sources */,
 				CAC5748A22463C2000593B26 /* BaseResponse.swift in Sources */,
 				CA4FB1AF2249023A002F72C5 /* SessionResponse.swift in Sources */,
+				CACF713E224B9D16001B6632 /* SyncRepository.swift in Sources */,
 				CAE424E92245826C005F8158 /* ViewModelContainter.swift in Sources */,
 				CAC79BF12244CC0B007CFD38 /* SwipeVC.swift in Sources */,
 				CAE424EE224583CB005F8158 /* LoginVC.swift in Sources */,

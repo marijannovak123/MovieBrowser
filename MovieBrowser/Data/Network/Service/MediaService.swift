@@ -19,6 +19,7 @@ class MediaService: BaseService {
     }
     
     func getGenres(type: MediaType) -> Observable<[Genre]> {
-        return api.request(target: .genres(type: type), responseType: [Genre].self)
+        return api.request(target: .genres(type: type), responseType: GenresResponse.self)
+            .map { $0.genres }
     }
 }

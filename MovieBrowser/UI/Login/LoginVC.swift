@@ -38,20 +38,21 @@ class LoginVC: BaseViewController<LoginVM> {
         
         let output = viewModel.transform(input: input)
         
-        output.loginResult.drive(onNext: {
-            switch $0 {
-            case .error(let message):
-                self.showMessage(message)
-            case .success:
+        output.loginSuccess
+            .drive(onNext: {
                 self.navigate(to: .swipe)
-            }
-        }).disposed(by: disposeBag)
+            })
+            .disposed(by: disposeBag)
         
-        output.isLoading.drive(onNext: {
-            self.showLoading($0)
-        }).disposed(by: disposeBag)
+        output.loginErrors
+            .drive(onNext: { self.showErrorMessage($0) } )
+            .disposed(by: disposeBag)
+        
+        output.isLoading
+            .drive(onNext: { self.showLoading($0) })
+            .disposed(by: disposeBag)
     }
-    
+
     private func changeInitialInputState() {
         if tfUsername.isAtOriginalState || tfPassword.isAtOriginalState {
             tfUsername.isAtOriginalState = false

@@ -9,15 +9,6 @@
 import Moya
 import RxSwift
 
-typealias CompletionHandler = () -> Void
-typealias NetworkErrorHandler = (NetworkError) -> Void
-typealias NetworkResult<T> = Result<T, NetworkError>
-
-enum Result<T, ErrorType: Error> {
-    case success(T)
-    case failure(ErrorType)
-}
-
 struct NetworkError: Error {
     let status: ResponseStatus
     let errorMessage: String
