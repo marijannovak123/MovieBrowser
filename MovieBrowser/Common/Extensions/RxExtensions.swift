@@ -80,6 +80,8 @@ extension ObservableType {
     }
 
     static func fromAction(block: @escaping () -> Void) -> Observable<Void> {
-        return Observable.just(()).do(onNext: { block() } )
+        return Observable.deferred {
+            .just(block())
+        }
     }
 }

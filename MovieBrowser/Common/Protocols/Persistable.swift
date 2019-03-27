@@ -20,10 +20,16 @@ protocol Persistable where Self: BaseModel {
 
 class BaseModel: Object {
     
-    @objc dynamic var id = ""
+    @objc dynamic var id: Int = 0
     
     override static func primaryKey() -> String {
         return "id"
     }
     
+}
+
+extension Array where Element: Persistable {
+    func asDomain() -> [Element.DomainType] {
+        return self.map { $0.asDomain() }
+    }
 }

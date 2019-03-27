@@ -71,15 +71,3 @@ extension Reactive where Base: Realm {
 
 }
 
-
-extension Array where Element: Persistable {
-    func asDomain() -> [Element.DomainType] {
-        return self.map { $0.asDomain() }
-    }
-}
-
-extension Array where Element: DomainData {
-    func asDatabaseType() -> [Element.DatabaseType] {
-        return self.map { $0.asDatabaseType() }
-    }
-}

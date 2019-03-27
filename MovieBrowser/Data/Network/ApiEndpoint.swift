@@ -12,6 +12,7 @@ enum ApiEndpoint {
     case newToken
     case login(request: LoginRequest)
     case createSession(requestToken: String)
+    case genres(type: MediaType)
     case trending(type: MediaType, time: TimeWindow)
 }
 
@@ -29,6 +30,8 @@ extension ApiEndpoint: TargetType {
             return "authentication/token/validate_with_login"
         case .createSession:
             return "authentication/session/new"
+        case .genres(let type):
+            return "genre/\(type.rawValue)/list"
         case .trending(let type, let time):
             return "trending/\(type.rawValue)/\(time.rawValue)"
         }

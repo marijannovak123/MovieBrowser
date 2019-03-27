@@ -10,8 +10,15 @@ import RxSwift
 
 class MediaService: BaseService {
     
-    func getTrending<T: Decodable>(type: MediaType, time: TimeWindow) -> Observable<T> {
-        return api.request(target: .trending(type: type, time: time), responseType: T.self)
+    func getTrendingMovies(time: TimeWindow) -> Observable<[Movie]> {
+        return api.request(target: .trending(type: .movie, time: time), responseType: [Movie].self)
     }
     
+    func getTrendingShows(time: TimeWindow) -> Observable<[Show]> {
+        return api.request(target: .trending(type: .tv, time: time), responseType: [Show].self)
+    }
+    
+    func getGenres(type: MediaType) -> Observable<[Genre]> {
+        return api.request(target: .genres(type: type), responseType: [Genre].self)
+    }
 }

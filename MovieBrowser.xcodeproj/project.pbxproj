@@ -49,6 +49,12 @@
 		CAC79C0222451C8C007CFD38 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC79C0122451C8C007CFD38 /* Colors.swift */; };
 		CAC79C0A22452717007CFD38 /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC79C0922452717007CFD38 /* ApiEndpoint.swift */; };
 		CAC79C0C2245296C007CFD38 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = CAC79C0B2245296C007CFD38 /* Keys.plist */; };
+		CACF712D224B6E1E001B6632 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACF712C224B6E1E001B6632 /* Movie.swift */; };
+		CACF712F224B6E5F001B6632 /* DBMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACF712E224B6E5F001B6632 /* DBMovie.swift */; };
+		CACF7131224B6EC2001B6632 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACF7130224B6EC2001B6632 /* Genre.swift */; };
+		CACF7133224B6ECF001B6632 /* DBGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACF7132224B6ECF001B6632 /* DBGenre.swift */; };
+		CACF7135224B6ED9001B6632 /* DBShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACF7134224B6ED9001B6632 /* DBShow.swift */; };
+		CACF7137224B6EE1001B6632 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACF7136224B6EE1001B6632 /* Show.swift */; };
 		CAE424DF224576F4005F8158 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424DE224576F4005F8158 /* LoginRequest.swift */; };
 		CAE424E122457CA2005F8158 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424E022457CA2005F8158 /* Network.swift */; };
 		CAE424E92245826C005F8158 /* ViewModelContainter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424E62245826B005F8158 /* ViewModelContainter.swift */; };
@@ -136,6 +142,12 @@
 		CAC79C0122451C8C007CFD38 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		CAC79C0922452717007CFD38 /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
 		CAC79C0B2245296C007CFD38 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		CACF712C224B6E1E001B6632 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		CACF712E224B6E5F001B6632 /* DBMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMovie.swift; sourceTree = "<group>"; };
+		CACF7130224B6EC2001B6632 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		CACF7132224B6ECF001B6632 /* DBGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBGenre.swift; sourceTree = "<group>"; };
+		CACF7134224B6ED9001B6632 /* DBShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBShow.swift; sourceTree = "<group>"; };
+		CACF7136224B6EE1001B6632 /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
 		CAE424DE224576F4005F8158 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		CAE424E022457CA2005F8158 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		CAE424E62245826B005F8158 /* ViewModelContainter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelContainter.swift; sourceTree = "<group>"; };
@@ -302,6 +314,9 @@
 		CAC57479224635EB00593B26 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				CACF712C224B6E1E001B6632 /* Movie.swift */,
+				CACF7130224B6EC2001B6632 /* Genre.swift */,
+				CACF7136224B6EE1001B6632 /* Show.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -309,6 +324,9 @@
 		CAC5747A224635F200593B26 /* Persistance */ = {
 			isa = PBXGroup;
 			children = (
+				CACF712E224B6E5F001B6632 /* DBMovie.swift */,
+				CACF7132224B6ECF001B6632 /* DBGenre.swift */,
+				CACF7134224B6ED9001B6632 /* DBShow.swift */,
 			);
 			path = Persistance;
 			sourceTree = "<group>";
@@ -763,8 +781,10 @@
 				CAC5747D224636EC00593B26 /* AuthService.swift in Sources */,
 				CAC79BFC2244FD20007CFD38 /* MovieSlide.swift in Sources */,
 				CA4FB1AB2248D972002F72C5 /* Validation.swift in Sources */,
+				CACF7133224B6ECF001B6632 /* DBGenre.swift in Sources */,
 				CAE42500224584E8005F8158 /* DomainData.swift in Sources */,
 				CAA2638F224A7C0600E6FB4D /* MediaService.swift in Sources */,
+				CACF7137224B6EE1001B6632 /* Show.swift in Sources */,
 				CA4FB1A82248D8B4002F72C5 /* ValidatableTextField.swift in Sources */,
 				CAE424F6224584B3005F8158 /* BaseViewController.swift in Sources */,
 				CAC574752246346300593B26 /* ViewControllerExtensions.swift in Sources */,
@@ -777,6 +797,8 @@
 				CAC574842246374800593B26 /* AuthStorage.swift in Sources */,
 				CAE424EB2245826C005F8158 /* ViewControllerContainer.swift in Sources */,
 				CA4FB1AD2248DB64002F72C5 /* AppButton.swift in Sources */,
+				CACF712D224B6E1E001B6632 /* Movie.swift in Sources */,
+				CACF712F224B6E5F001B6632 /* DBMovie.swift in Sources */,
 				CAE424FE224584E8005F8158 /* ViewModelType.swift in Sources */,
 				CAC574632246329900593B26 /* LoginVM.swift in Sources */,
 				CAC5748A22463C2000593B26 /* BaseResponse.swift in Sources */,
@@ -784,6 +806,7 @@
 				CAE424E92245826C005F8158 /* ViewModelContainter.swift in Sources */,
 				CAC79BF12244CC0B007CFD38 /* SwipeVC.swift in Sources */,
 				CAE424EE224583CB005F8158 /* LoginVC.swift in Sources */,
+				CACF7131224B6EC2001B6632 /* Genre.swift in Sources */,
 				CAC574742246346300593B26 /* StringExtensions.swift in Sources */,
 				CAC574812246371000593B26 /* BaseService.swift in Sources */,
 				CAA2638D224A7AE700E6FB4D /* TimeWindow.swift in Sources */,
@@ -792,6 +815,7 @@
 				CAE424DF224576F4005F8158 /* LoginRequest.swift in Sources */,
 				CAC79C0A22452717007CFD38 /* ApiEndpoint.swift in Sources */,
 				CA4FB1B322492A9D002F72C5 /* AppTextField.swift in Sources */,
+				CACF7135224B6ED9001B6632 /* DBShow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
