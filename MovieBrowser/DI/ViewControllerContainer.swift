@@ -25,6 +25,18 @@ class ViewControllerContainer {
             MainVC()
         }
         
+        container.register(TrendingVC.self) { _ in
+            TrendingVC()
+        }
+        
+        container.register(AccountVC.self) { _ in
+            AccountVC()
+        }
+        
+        container.register(SearchVC.self) { _ in
+            SearchVC()
+        }
+        
         return container
     }
 }

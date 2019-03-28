@@ -6,6 +6,11 @@ enum Screen {
     case swipe
     case main
     
+    //main menu
+    case trending
+    case search
+    case account
+    
     func getController() -> UIViewController? {
         let container = AppDelegate.instance.viewControllerContainer!
         
@@ -18,6 +23,12 @@ enum Screen {
             controller = container.resolve(SwipeVC.self)!
         case .main:
             controller = container.resolve(MainVC.self)!
+        case .trending:
+            controller = container.resolve(TrendingVC.self)!
+        case .search:
+            controller = container.resolve(SearchVC.self)!
+        case .account:
+            controller = container.resolve(AccountVC.self)!
         }
         
         if self.isRootController() {

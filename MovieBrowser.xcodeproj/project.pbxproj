@@ -11,6 +11,13 @@
 		98115E3AAB844E1E960CF209 /* Pods_MovieBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C745683F95966F47161A87 /* Pods_MovieBrowser.framework */; };
 		9B94F844E9B1F2FDBF83A8C0 /* Pods_MovieBrowserUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2693C0835F76B0955873CAB8 /* Pods_MovieBrowserUITests.framework */; };
 		CA00C451224D0AC9000E288C /* ResultExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA00C450224D0AC9000E288C /* ResultExtensions.swift */; };
+		CA00C453224D19E2000E288C /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA00C452224D19E2000E288C /* MainMenu.swift */; };
+		CA00C459224D1B39000E288C /* TrendingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA00C457224D1B39000E288C /* TrendingVC.swift */; };
+		CA00C45A224D1B39000E288C /* TrendingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA00C458224D1B39000E288C /* TrendingVC.xib */; };
+		CA00C45D224D1B47000E288C /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA00C45B224D1B47000E288C /* SearchVC.swift */; };
+		CA00C45E224D1B47000E288C /* SearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA00C45C224D1B47000E288C /* SearchVC.xib */; };
+		CA00C461224D1B58000E288C /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA00C45F224D1B58000E288C /* AccountVC.swift */; };
+		CA00C462224D1B58000E288C /* AccountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA00C460224D1B58000E288C /* AccountVC.xib */; };
 		CA4FB1A82248D8B4002F72C5 /* ValidatableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FB1A72248D8B4002F72C5 /* ValidatableTextField.swift */; };
 		CA4FB1AB2248D972002F72C5 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FB1AA2248D972002F72C5 /* Validation.swift */; };
 		CA4FB1AD2248DB64002F72C5 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FB1AC2248DB64002F72C5 /* AppButton.swift */; };
@@ -101,6 +108,13 @@
 		AEE6DE00E3F0E7B31680DBB6 /* Pods-MovieBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBrowserTests.release.xcconfig"; path = "Target Support Files/Pods-MovieBrowserTests/Pods-MovieBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
 		B6C4EC10AB6EBE5C0D171F07 /* Pods-MovieBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBrowserTests.debug.xcconfig"; path = "Target Support Files/Pods-MovieBrowserTests/Pods-MovieBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CA00C450224D0AC9000E288C /* ResultExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultExtensions.swift; sourceTree = "<group>"; };
+		CA00C452224D19E2000E288C /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		CA00C457224D1B39000E288C /* TrendingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingVC.swift; sourceTree = "<group>"; };
+		CA00C458224D1B39000E288C /* TrendingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendingVC.xib; sourceTree = "<group>"; };
+		CA00C45B224D1B47000E288C /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		CA00C45C224D1B47000E288C /* SearchVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchVC.xib; sourceTree = "<group>"; };
+		CA00C45F224D1B58000E288C /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
+		CA00C460224D1B58000E288C /* AccountVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountVC.xib; sourceTree = "<group>"; };
 		CA4FB1A72248D8B4002F72C5 /* ValidatableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatableTextField.swift; sourceTree = "<group>"; };
 		CA4FB1AA2248D972002F72C5 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		CA4FB1AC2248DB64002F72C5 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
@@ -218,6 +232,33 @@
 				694670BDB50FA9E0690BB4DB /* Pods-MovieBrowserUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		CA00C454224D1B13000E288C /* Trending */ = {
+			isa = PBXGroup;
+			children = (
+				CA00C457224D1B39000E288C /* TrendingVC.swift */,
+				CA00C458224D1B39000E288C /* TrendingVC.xib */,
+			);
+			path = Trending;
+			sourceTree = "<group>";
+		};
+		CA00C455224D1B1C000E288C /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CA00C45B224D1B47000E288C /* SearchVC.swift */,
+				CA00C45C224D1B47000E288C /* SearchVC.xib */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		CA00C456224D1B22000E288C /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				CA00C45F224D1B58000E288C /* AccountVC.swift */,
+				CA00C460224D1B58000E288C /* AccountVC.xib */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 		CA4FB1A92248D952002F72C5 /* Util */ = {
@@ -381,6 +422,9 @@
 		CAC79C05224521E5007CFD38 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				CA00C456224D1B22000E288C /* Account */,
+				CA00C455224D1B1C000E288C /* Search */,
+				CA00C454224D1B13000E288C /* Trending */,
 				CACF7138224B9917001B6632 /* Main */,
 				CAE424F1224583FC005F8158 /* Login */,
 				CAE424F0224583E9005F8158 /* Posters */,
@@ -515,6 +559,7 @@
 			children = (
 				CAC574772246351700593B26 /* Screen.swift */,
 				CAE4250222458563005F8158 /* UIResult.swift */,
+				CA00C452224D19E2000E288C /* MainMenu.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -633,10 +678,13 @@
 				CAE424EF224583CB005F8158 /* LoginVC.xib in Resources */,
 				CAC79BFE2244FD95007CFD38 /* MovieSlide.xib in Resources */,
 				CAC79C0C2245296C007CFD38 /* Keys.plist in Resources */,
+				CA00C45A224D1B39000E288C /* TrendingVC.xib in Resources */,
 				CAC79BF22244CC0B007CFD38 /* SwipeVC.xib in Resources */,
 				CA59D1612243DB2E0021B1DF /* LaunchScreen.storyboard in Resources */,
 				CACF713C224B993B001B6632 /* MainVC.xib in Resources */,
 				CA59D15E2243DB2E0021B1DF /* Assets.xcassets in Resources */,
+				CA00C462224D1B58000E288C /* AccountVC.xib in Resources */,
+				CA00C45E224D1B47000E288C /* SearchVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -783,6 +831,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAE424FF224584E8005F8158 /* Persistable.swift in Sources */,
+				CA00C45D224D1B47000E288C /* SearchVC.swift in Sources */,
 				CACF713B224B993B001B6632 /* MainVC.swift in Sources */,
 				CAC574662246333200593B26 /* AuthRepository.swift in Sources */,
 				CACF7140224BC797001B6632 /* GenresResponse.swift in Sources */,
@@ -805,6 +854,7 @@
 				CACF7137224B6EE1001B6632 /* Show.swift in Sources */,
 				CA4FB1A82248D8B4002F72C5 /* ValidatableTextField.swift in Sources */,
 				CAE424F6224584B3005F8158 /* BaseViewController.swift in Sources */,
+				CA00C461224D1B58000E288C /* AccountVC.swift in Sources */,
 				CAC574752246346300593B26 /* ViewControllerExtensions.swift in Sources */,
 				CAC574712246346300593B26 /* RealmExtensions.swift in Sources */,
 				CAA2638B224A7A9100E6FB4D /* MediaType.swift in Sources */,
@@ -825,6 +875,7 @@
 				CAC79BF12244CC0B007CFD38 /* SwipeVC.swift in Sources */,
 				CAE424EE224583CB005F8158 /* LoginVC.swift in Sources */,
 				CACF7131224B6EC2001B6632 /* Genre.swift in Sources */,
+				CA00C459224D1B39000E288C /* TrendingVC.swift in Sources */,
 				CAC574742246346300593B26 /* StringExtensions.swift in Sources */,
 				CAC574812246371000593B26 /* BaseService.swift in Sources */,
 				CAA2638D224A7AE700E6FB4D /* TimeWindow.swift in Sources */,
@@ -833,6 +884,7 @@
 				CAE424DF224576F4005F8158 /* LoginRequest.swift in Sources */,
 				CAC79C0A22452717007CFD38 /* ApiEndpoint.swift in Sources */,
 				CA4FB1B322492A9D002F72C5 /* AppTextField.swift in Sources */,
+				CA00C453224D19E2000E288C /* MainMenu.swift in Sources */,
 				CACF7135224B6ED9001B6632 /* DBShow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
