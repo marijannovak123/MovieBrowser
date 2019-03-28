@@ -11,9 +11,6 @@ import RxCocoa
 
 class LoginVM: ViewModelType {
     
-    let isLoadingRelay = BehaviorRelay(value: false)
-    let errorTracker = PublishSubject<Error>()
-    
     struct Input {
         let loginTrigger: Driver<Void>
         let username: Driver<ValidatedText>
@@ -28,6 +25,8 @@ class LoginVM: ViewModelType {
     private let repository: AuthRepository
     private let syncRepository: SyncRepository
     
+    private let isLoadingRelay = BehaviorRelay(value: false)
+
     init(repository: AuthRepository, syncRepository: SyncRepository) {
         self.repository = repository
         self.syncRepository = syncRepository

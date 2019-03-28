@@ -28,7 +28,7 @@ class LoginVC: BaseViewController<LoginVM> {
     override func bindToViewModel() {
         let trigger = bLogin.rx.tap
             .asDriver()
-            .do(onNext: { self.changeInitialInputState() }) // to vm
+            .do(onNext: { self.changeInitialInputState() })
         
         let input = LoginVM.Input(
             loginTrigger: trigger,

@@ -113,10 +113,6 @@ class Network<ApiTarget: TargetType> {
             .asObservable()
             .filterSuccessfulStatusCodes()
             .map(responseType, using: decoder)
-//            .map { NetworkResult.success($0) }
-//            .catchError { error in
-//                .just(.failure(NetworkError(error as? MoyaError)))
-//            }
     }
 }
 

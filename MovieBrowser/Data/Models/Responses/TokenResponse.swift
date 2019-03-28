@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TokenResponse: Codable {
+struct TokenResponse: Decodable {
     let success: Bool
     let expiresAt: String
     let requestToken: String
