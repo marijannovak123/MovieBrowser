@@ -44,7 +44,7 @@ class LoginVC: BaseViewController<LoginVM> {
             })
             .disposed(by: disposeBag)
         
-        output.loginErrors
+        output.loginError
             .drive(onNext: { self.showErrorMessage($0) } )
             .disposed(by: disposeBag)
         

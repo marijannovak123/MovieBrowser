@@ -21,6 +21,10 @@ class ViewControllerContainer {
             SwipeVC()
         }
        
+        container.register(MainVC.self) { _ in
+            MainVC()
+        }
+        
         return container
     }
 }

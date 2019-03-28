@@ -12,7 +12,8 @@ import RxSwiftExt
 
 class LoginVM: ViewModelType {
     
-    let isLoadingRelay = BehaviorRelay.init(value: false)
+    let isLoadingRelay = BehaviorRelay(value: false)
+    let errorTracker = PublishSubject<Error>()
     
     struct Input {
         let loginTrigger: Driver<Void>
@@ -22,7 +23,7 @@ class LoginVM: ViewModelType {
     
     struct Output {
         let loginSuccess: Driver<Void>
-        let loginErrors: Driver<String>
+        let loginError: Driver<String>
         let isLoading: Driver<Bool>
     }
     
@@ -38,27 +39,21 @@ class LoginVM: ViewModelType {
         let loginObservable = input.loginTrigger
             .withLatestFrom (Driver.combineLatest(input.username, input.password))
             .filter { $0.0.isValid && $0.1.isValid }
-            .do(onNext: { _ in self.isLoadingRelay.accept(true) })
             .asObservable()
-            .flatMap {
+            .startLoading(isLoadingRelay)
+            .flatMapMaterialized(errorTracker) {
                 self.repository.login(username: $0.0.value!, password: $0.1.value!)
-            }.flatMap {result -> Observable<Void> in
+            }.flatMapMaterialized(errorTracker) {
                 self.syncRepository.fetchAndSaveLocalContent()
-            }.materialize()
-
-        let loginResult = loginObservable.elements()
+            }.stopLoading(isLoadingRelay)
             .asDriver(onErrorJustReturn: ())
-            .do ( onNext: { _ in self.isLoadingRelay.accept(false) })
-
-        let loginErrors = loginObservable.errors()
-            .map { error in error.localizedDescription }
-            .asDriver(onErrorJustReturn: "Errorings")
-            .do ( onNext: { _ in self.isLoadingRelay.accept(false) })
+ 
+        let loginError = errorTracker
+            .stopLoadingOnError(isLoadingRelay)
+            .map { $0.localizedDescription }
+            .asDriver(onErrorJustReturn: "Kita error")
         
-        return Output(loginSuccess: loginResult, loginErrors: loginErrors, isLoading: isLoadingRelay.asDriver())
+        return Output(loginSuccess: loginObservable, loginError: loginError, isLoading: isLoadingRelay.asDriver())
     }
     
-    func syncContent() -> Observable<Void> {
-        return syncRepository.fetchAndSaveLocalContent()
-    }
 }

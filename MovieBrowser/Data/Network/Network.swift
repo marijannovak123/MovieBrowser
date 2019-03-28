@@ -26,6 +26,11 @@ struct NetworkError: Error {
         }
         errorMessage = status.errorDescription
     }
+    
+    init (statusCode: Int) {
+        status = ResponseStatus.getByCode(code: statusCode)
+        errorMessage = status.errorDescription
+    }
 }
 
 enum ResponseStatus: Int {

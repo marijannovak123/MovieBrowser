@@ -29,6 +29,7 @@ class BaseModel: Object {
 }
 
 extension Array where Element: Persistable {
+    
     func asDomain() -> [Element.DomainType] {
         return self.map { $0.asDomain() }
     }
