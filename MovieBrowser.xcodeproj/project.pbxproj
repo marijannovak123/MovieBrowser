@@ -10,6 +10,7 @@
 		690B029FEA2D014E8FE9492E /* Pods_MovieBrowserTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6315CED5984ABC4D3A808332 /* Pods_MovieBrowserTests.framework */; };
 		98115E3AAB844E1E960CF209 /* Pods_MovieBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C745683F95966F47161A87 /* Pods_MovieBrowser.framework */; };
 		9B94F844E9B1F2FDBF83A8C0 /* Pods_MovieBrowserUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2693C0835F76B0955873CAB8 /* Pods_MovieBrowserUITests.framework */; };
+		CA00C451224D0AC9000E288C /* ResultExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA00C450224D0AC9000E288C /* ResultExtensions.swift */; };
 		CA4FB1A62248D1E6002F72C5 /* Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FB1A52248D1E6002F72C5 /* Completion.swift */; };
 		CA4FB1A82248D8B4002F72C5 /* ValidatableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FB1A72248D8B4002F72C5 /* ValidatableTextField.swift */; };
 		CA4FB1AB2248D972002F72C5 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FB1AA2248D972002F72C5 /* Validation.swift */; };
@@ -101,6 +102,7 @@
 		A4A9CE6FF246D0B0E298CD34 /* Pods-MovieBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBrowser.debug.xcconfig"; path = "Target Support Files/Pods-MovieBrowser/Pods-MovieBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 		AEE6DE00E3F0E7B31680DBB6 /* Pods-MovieBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBrowserTests.release.xcconfig"; path = "Target Support Files/Pods-MovieBrowserTests/Pods-MovieBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
 		B6C4EC10AB6EBE5C0D171F07 /* Pods-MovieBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBrowserTests.debug.xcconfig"; path = "Target Support Files/Pods-MovieBrowserTests/Pods-MovieBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CA00C450224D0AC9000E288C /* ResultExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultExtensions.swift; sourceTree = "<group>"; };
 		CA4FB1A52248D1E6002F72C5 /* Completion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Completion.swift; sourceTree = "<group>"; };
 		CA4FB1A72248D8B4002F72C5 /* ValidatableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatableTextField.swift; sourceTree = "<group>"; };
 		CA4FB1AA2248D972002F72C5 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				CAC5746E2246346300593B26 /* StringExtensions.swift */,
 				CAC5746D2246346300593B26 /* TableViewExtensions.swift */,
 				CAC5746F2246346300593B26 /* ViewControllerExtensions.swift */,
+				CA00C450224D0AC9000E288C /* ResultExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -670,7 +673,6 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MovieBrowser/Pods-MovieBrowser-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityLogger/AlamofireNetworkActivityLogger.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Loaf/Loaf.framework",
@@ -684,7 +686,6 @@
 				"${BUILT_PRODUCTS_DIR}/RxKingfisher/RxKingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
 			);
@@ -693,7 +694,6 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityLogger.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Loaf.framework",
@@ -707,7 +707,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxKingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftExt.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
 			);
@@ -805,6 +804,7 @@
 				CAE424E122457CA2005F8158 /* Network.swift in Sources */,
 				CAC5747D224636EC00593B26 /* AuthService.swift in Sources */,
 				CAC79BFC2244FD20007CFD38 /* MovieSlide.swift in Sources */,
+				CA00C451224D0AC9000E288C /* ResultExtensions.swift in Sources */,
 				CA4FB1AB2248D972002F72C5 /* Validation.swift in Sources */,
 				CACF7133224B6ECF001B6632 /* DBGenre.swift in Sources */,
 				CAE42500224584E8005F8158 /* DomainData.swift in Sources */,

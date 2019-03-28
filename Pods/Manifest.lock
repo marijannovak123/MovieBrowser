@@ -1,7 +1,5 @@
 PODS:
   - Alamofire (4.8.1)
-  - AlamofireNetworkActivityLogger (2.3.0):
-    - Alamofire (~> 4.6)
   - Differentiator (3.1.0)
   - Kingfisher (5.2.0)
   - Loaf (0.3.0)
@@ -32,19 +30,10 @@ PODS:
     - RealmSwift (~> 3.0)
     - RxSwift (~> 4.0)
   - RxSwift (4.3.1)
-  - RxSwiftExt (3.4.0):
-    - RxSwiftExt/Core (= 3.4.0)
-    - RxSwiftExt/RxCocoa (= 3.4.0)
-  - RxSwiftExt/Core (3.4.0):
-    - RxSwift (~> 4.0)
-  - RxSwiftExt/RxCocoa (3.4.0):
-    - RxCocoa (~> 4.0)
-    - RxSwiftExt/Core
   - Swinject (2.6.0)
   - TPKeyboardAvoiding (1.3.2)
 
 DEPENDENCIES:
-  - AlamofireNetworkActivityLogger (~> 2.3)
   - Kingfisher
   - Loaf
   - MBProgressHUD (~> 1.1.0)
@@ -56,14 +45,12 @@ DEPENDENCIES:
   - RxKingfisher
   - RxRealm
   - RxSwift (~> 4.3.1)
-  - RxSwiftExt
   - Swinject
   - TPKeyboardAvoiding
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - AlamofireNetworkActivityLogger
     - Differentiator
     - Kingfisher
     - Loaf
@@ -77,13 +64,11 @@ SPEC REPOS:
     - RxKingfisher
     - RxRealm
     - RxSwift
-    - RxSwiftExt
     - Swinject
     - TPKeyboardAvoiding
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
-  AlamofireNetworkActivityLogger: 6f3076652ab7fa6c819b59be08ea038d339e36d8
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   Kingfisher: 07067cfacf371117330dceb4b4b8f5c4b691ab42
   Loaf: 081b392fbe142da036377ebd988831596b89cf98
@@ -97,10 +82,9 @@ SPEC CHECKSUMS:
   RxKingfisher: b6c043154e287f943ea8370bda0961bc052cf6b9
   RxRealm: 5379eddd74f8d617ca7681d1f8d144af25b432b0
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
-  RxSwiftExt: 01f8ecbeeb355698e9c75365ebe908b00dacf45d
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
 
-PODFILE CHECKSUM: de29bc647bd4aff042bb3a5c59d34b2e039e845e
+PODFILE CHECKSUM: 9ea0bd3cdf8e51818c779d555a45313c720a3772
 
 COCOAPODS: 1.6.1

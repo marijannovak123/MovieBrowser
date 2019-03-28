@@ -63,50 +63,42 @@ extension ObservableType {
         return Observable.deferred {.just(block())}
     }
     
-    func flatMapMaterialized<O: ObservableType>(_ errorSubject: PublishSubject<Error>, _ selector: @escaping (E) throws -> O) -> Observable<O.E> {
-        return self.flatMap {
-            try selector($0)
-                .trackError(errorSubject: errorSubject)
-                .materialize()
-                .elements()
-        }
-    }
-    
     func startLoading(_ loadingRelay: BehaviorRelay<Bool>) -> Observable<Self.E> {
         return self.do(onNext: { _ in loadingRelay.accept(true) })
     }
     
     func stopLoading(_ loadingRelay: BehaviorRelay<Bool>) -> Observable<Self.E> {
-        return self.do(onNext: { _ in loadingRelay.accept(false) })
+        return self.do (
+            onNext: { _ in loadingRelay.accept(false) },
+            onError: { _ in loadingRelay.accept(false) }
+        )
     }
     
-    func trackError(errorSubject: PublishSubject<Error>) -> Observable<E> {
-        return self.do(onError: { error in errorSubject.onNext(error) })
-    }
-    
-    func flatMapToResult(_ selector: @escaping (E) throws -> Observable<AnyResult>) -> Observable<AnyResult> {
-        return self.flatMap {
-            try selector($0).catchError { error in
-                .just(.failure(error))
-            }
-        }
-    }
 }
 
-typealias AnyResult = Result<Any, Error>
 
-extension ObservableType where E == AnyResult {
+extension ObservableType {
     
-    func flatMapResult(_ selector: @escaping (AnyResult) throws -> Observable<AnyResult>) -> Observable<AnyResult> {
-        return self.flatMap { (result: AnyResult) -> Observable<AnyResult> in
+    typealias ResultWrapper<A> = Observable<Result<A, Error>>
+    
+    func flatMapResult<Input, Output>(_ selector: @escaping (Input) throws -> Observable<Output>) -> ResultWrapper<Output> where E == Result<Input, Error> {
+        return self.flatMap { (result: Result<Input, Error>) -> ResultWrapper<Output> in
             switch result {
-            case .success:
-                return try selector(result).catchError { error in
-                    .just(.failure(error))
-                }
+            case .success(let data):
+                return try selector(data)
+                    .map { .success($0) }
+                    .catchError { .just(.failure($0)) }
             case .failure(let error):
                 return .just(.failure(error))
             }
+        }
+    }
+    
+    func flatMapToResult<Output>(_ selector: @escaping (E) throws -> Observable<Output>) -> ResultWrapper<Output> {
+        return self.flatMap { param -> ResultWrapper<Output> in
+            return try selector(param)
+                .map { .success($0) }
+                .catchError { .just(.failure($0)) }
         }
     }
 

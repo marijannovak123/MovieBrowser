@@ -38,19 +38,20 @@ class LoginVC: BaseViewController<LoginVM> {
         
         let output = viewModel.transform(input: input)
         
-        output.loginSuccess
-            .drive(onNext: {
-                self.navigate(to: .swipe)
-            })
-            .disposed(by: disposeBag)
-        
-        output.loginError
-            .drive(onNext: { self.showErrorMessage($0) } )
-            .disposed(by: disposeBag)
+        output.loginResult
+            .drive(onNext: { [unowned self] in
+                switch $0 {
+                case .error(let message):
+                    self.showErrorMessage(message)
+                case .success:
+                    self.navigate(to: .swipe)
+                }
+            }).disposed(by: disposeBag)
         
         output.isLoading
-            .drive(onNext: { self.showLoading($0) })
-            .disposed(by: disposeBag)
+            .drive(onNext: { [unowned self] in
+                self.showLoading($0)
+            }).disposed(by: disposeBag)
     }
 
     private func changeInitialInputState() {

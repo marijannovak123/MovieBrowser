@@ -22,8 +22,7 @@ class LoginVM: ViewModelType {
     }
     
     struct Output {
-        let loginSuccess: Driver<Void>
-        let loginError: Driver<String>
+        let loginResult: Driver<UIResult<Void>>
         let isLoading: Driver<Bool>
     }
     
@@ -36,24 +35,20 @@ class LoginVM: ViewModelType {
     }
     
     func transform(input: LoginVM.Input) -> LoginVM.Output {
-        let loginObservable = input.loginTrigger
+        let loginResult = input.loginTrigger
             .withLatestFrom (Driver.combineLatest(input.username, input.password))
             .filter { $0.0.isValid && $0.1.isValid }
             .asObservable()
             .startLoading(isLoadingRelay)
-            .flatMapMaterialized(errorTracker) {
-                self.repository.login(username: $0.0.value!, password: $0.1.value!)
-            }.flatMapMaterialized(errorTracker) {
+            .flatMapToResult { loginParams in
+                self.repository.login(username: loginParams.0.value!, password: loginParams.1.value!)
+            }.flatMapResult {
                 self.syncRepository.fetchAndSaveLocalContent()
             }.stopLoading(isLoadingRelay)
-            .asDriver(onErrorJustReturn: ())
- 
-        let loginError = errorTracker
-            .stopLoadingOnError(isLoadingRelay)
-            .map { $0.localizedDescription }
-            .asDriver(onErrorJustReturn: "Kita error")
+            .map { $0.toUIResult() }
+            .asDriver(onErrorJustReturn: UIResult.defaultError)
         
-        return Output(loginSuccess: loginObservable, loginError: loginError, isLoading: isLoadingRelay.asDriver())
+        return Output(loginResult: loginResult, isLoading: isLoadingRelay.asDriver())
     }
     
 }
