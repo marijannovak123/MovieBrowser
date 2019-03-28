@@ -104,9 +104,3 @@ extension ObservableType {
 
 }
 
-extension PublishSubject where E == Error {
-    
-    func stopLoadingOnError(_ loadingRelay: BehaviorRelay<Bool>) -> Observable<E> {
-        return self.do(onNext: { _ in loadingRelay.accept(false) } )
-    }
-}
