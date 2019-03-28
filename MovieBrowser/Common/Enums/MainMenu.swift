@@ -13,7 +13,7 @@ enum MainMenu: CaseIterable {
     case search
     case account
     
-    func getController() -> Screen {
+    var screen: Screen {
         switch self {
         case .trending:
             return .trending
@@ -21,6 +21,17 @@ enum MainMenu: CaseIterable {
             return .search
         case .account:
             return .account
+        }
+    }
+    
+    var tabBarItem: UITabBarItem {
+        switch self {
+        case .trending:
+            
+        case .search:
+            
+        case .account:
+            
         }
     }
     
