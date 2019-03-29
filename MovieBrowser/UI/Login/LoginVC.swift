@@ -44,7 +44,7 @@ class LoginVC: BaseViewController<LoginVM> {
                 case .error(let message):
                     self.showErrorMessage(message)
                 case .success:
-                    self.navigate(to: .swipe)
+                    self.navigate(to: .main)
                 }
             }).disposed(by: disposeBag)
         

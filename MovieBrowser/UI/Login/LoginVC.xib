@@ -26,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaD-Lg-WkS" customClass="AppButton" customModule="MovieBrowser" customModuleProvider="target">
-                    <rect key="frame" x="168.5" y="380.5" width="38" height="30"/>
+                    <rect key="frame" x="32" y="380.5" width="311" height="30"/>
                     <state key="normal" title="Login"/>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="enl-S8-Q3T" userLabel="Username" customClass="ValidatableTextField" customModule="MovieBrowser" customModuleProvider="target">
@@ -82,8 +82,10 @@
                 <constraint firstItem="UZ9-69-SFq" firstAttribute="leading" secondItem="0Vi-oC-nKd" secondAttribute="leading" id="DzD-tX-LoG"/>
                 <constraint firstItem="0Vi-oC-nKd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Eco-3m-Rq5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0Vi-oC-nKd" secondAttribute="trailing" constant="32" id="F5h-z5-f7F"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GaD-Lg-WkS" secondAttribute="trailing" constant="32" id="H5u-pF-oKV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="enl-S8-Q3T" secondAttribute="trailing" constant="32" id="HfI-J7-1Kv"/>
                 <constraint firstItem="enl-S8-Q3T" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="LY7-eH-MLd"/>
+                <constraint firstItem="GaD-Lg-WkS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="PWt-Yk-XGb"/>
                 <constraint firstItem="UaF-Lo-1B5" firstAttribute="centerY" secondItem="0Vi-oC-nKd" secondAttribute="centerY" id="e58-iR-6VA"/>
                 <constraint firstItem="enl-S8-Q3T" firstAttribute="top" secondItem="Jcy-2G-VjB" secondAttribute="bottom" constant="2" id="f0t-33-NcJ"/>
                 <constraint firstItem="0Vi-oC-nKd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="kwS-C3-fnd"/>

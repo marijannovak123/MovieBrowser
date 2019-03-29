@@ -12,7 +12,7 @@ class SearchVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Search"
         // Do any additional setup after loading the view.
     }
 

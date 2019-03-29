@@ -29,9 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         viewControllerContainer = ViewControllerContainer.build(viewModelContainer: viewModelContainer)
         
         window = UIWindow(frame: UIScreen.main.bounds)
+        window?.tintColor = Colors.accent
         window?.rootViewController = getRootVC()
         window?.makeKeyAndVisible()
-            
+        
         return true
     }
 
@@ -53,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func getRootVC() -> UIViewController {
         let defaults = singletonContainer.resolve(UserDefaultsHelper.self)!
         if defaults.isLoggedIn {
-            return viewControllerContainer.resolve(SwipeVC.self)!
+            return viewControllerContainer.resolve(MainVC.self)!
         } else {
             return viewControllerContainer.resolve(LoginVC.self)!
         }

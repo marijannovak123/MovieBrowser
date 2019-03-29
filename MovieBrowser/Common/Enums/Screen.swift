@@ -39,7 +39,12 @@ enum Screen {
     }
     
     func isRootController() -> Bool {
-        return false
+        switch self {
+        case .trending, .search, .account:
+            return true
+        default:
+            return false
+        }
     }
 }
 

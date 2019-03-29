@@ -12,7 +12,7 @@ class AccountVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Account"
         // Do any additional setup after loading the view.
     }
 

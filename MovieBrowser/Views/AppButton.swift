@@ -10,7 +10,7 @@ import UIKit
 
 class AppButton: UIButton {
     
-    @IBInspectable var background: UIColor = Colors.primary {
+    @IBInspectable var background: UIColor = Colors.accent {
         didSet {
             self.backgroundColor = background
         }

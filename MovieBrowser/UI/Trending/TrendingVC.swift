@@ -12,7 +12,7 @@ class TrendingVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Trending"
         // Do any additional setup after loading the view.
     }
 

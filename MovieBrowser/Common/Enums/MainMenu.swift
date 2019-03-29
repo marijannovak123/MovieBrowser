@@ -27,11 +27,11 @@ enum MainMenu: CaseIterable {
     var tabBarItem: UITabBarItem {
         switch self {
         case .trending:
-            
+            return UITabBarItem(title: "Trending", image: #imageLiteral(resourceName: "trending"), tag: 0)
         case .search:
-            
+            return UITabBarItem(title: "Search", image: #imageLiteral(resourceName: "find"), tag: 1)
         case .account:
-            
+            return UITabBarItem(title: "Account", image: #imageLiteral(resourceName: "account"), tag: 2)
         }
     }
     
