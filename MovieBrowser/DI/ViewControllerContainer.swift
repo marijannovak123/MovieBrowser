@@ -25,8 +25,8 @@ class ViewControllerContainer {
             MainVC()
         }
         
-        container.register(TrendingVC.self) { _ in
-            TrendingVC()
+        container.register(TrendingVC.self) {
+            TrendingVC(viewModel: $0.resolve(TrendingVM.self)!)
         }
         
         container.register(AccountVC.self) { _ in

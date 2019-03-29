@@ -11,4 +11,8 @@ import Foundation
 enum TimeWindow: String {
     case day = "day"
     case week = "week"
+    
+    static var allValues: [TimeWindow] {
+        return [.week, .day]
+    }
 }

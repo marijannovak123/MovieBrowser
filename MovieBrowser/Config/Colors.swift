@@ -14,4 +14,5 @@ class Colors {
     
     public static let primary = #colorLiteral(red: 0.01176470588, green: 0.662745098, blue: 0.9568627451, alpha: 1)
     public static let accent = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+    public static let lightGray = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
 }

@@ -17,6 +17,10 @@ class ViewModelContainer {
             LoginVM(repository: $0.resolve(AuthRepository.self)!, syncRepository: $0.resolve(SyncRepository.self)!)
         }
         
+        container.register(TrendingVM.self) {
+            TrendingVM(repository: $0.resolve(MediaRepository.self)!)
+        }
+        
         return container
     }
 }

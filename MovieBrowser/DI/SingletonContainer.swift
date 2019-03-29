@@ -68,6 +68,10 @@ class SingletonContainer {
             SyncRepository(service: $0.resolve(MediaService.self)!, storage: $0.resolve(MediaStorage.self)!)
         }
         
+        container.register(MediaRepository.self) {
+            MediaRepository(service: $0.resolve(MediaService.self)!, storage: $0.resolve(MediaStorage.self)!)
+        }
+        
         return container
     }
 }

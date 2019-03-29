@@ -13,4 +13,8 @@ enum MediaType: String {
     case movie = "movie"
     case tv = "tv"
     case person = "person"
+    
+    static var trendingTypes: [MediaType] {
+        return [.movie, .tv]
+    }
 }
