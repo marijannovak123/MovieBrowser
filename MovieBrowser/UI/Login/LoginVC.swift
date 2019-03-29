@@ -19,7 +19,6 @@ class LoginVC: BaseViewController<LoginVM> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "background"))
         
         tfUsername.errorLabel = lUsernameError
         tfPassword.errorLabel = lPasswordError

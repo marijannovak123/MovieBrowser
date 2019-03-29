@@ -28,17 +28,21 @@ class TrendingVC: BaseViewController<TrendingVM> {
     
     override func viewDidLoad() {
         title = "Trending"
+        
         timePickerView = createPickerView()
         typePickerView = createPickerView()
-        setupPicker(picker: typePickerView)
-        setupPicker(picker: timePickerView)
-        tfMediaType.delegate = self
-        tfTimeWindow.delegate = self
+        setupPickers()
         
         super.viewDidLoad()
      
+        tfMediaType.delegate = self
+        tfTimeWindow.delegate = self
+        
         tfMediaType.text = selectedMediaType.rawValue
         tfTimeWindow.text = selectedTimeWindow.rawValue
+        
+        navigationController?.navigationBar.barStyle = .black
+
     }
     
     override func bindToViewModel() {
@@ -71,19 +75,20 @@ class TrendingVC: BaseViewController<TrendingVM> {
         pickerView.delegate = self
         pickerView.dataSource = self
         pickerView.backgroundColor = UIColor.white
+        pickerView.tintColor = Colors.primary
         return pickerView
     }
     
-    private func setupPicker(picker: UIPickerView) {
+    private func setupPickers() {
         let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.default
+        toolBar.barStyle = UIBarStyle.black
         toolBar.isTranslucent = true
         toolBar.tintColor = Colors.primary
         toolBar.sizeToFit()
         
         let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(pickerCancel))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: #selector(pickerDone))
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(pickerDone))
         toolBar.isUserInteractionEnabled = true
         
         toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
