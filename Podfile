@@ -19,6 +19,7 @@ target 'MovieBrowser' do
     pod 'Loaf'
     pod 'Kingfisher'
     pod 'RxKingfisher'
+    pod 'Action'
 
  target 'MovieBrowserTests' do
     inherit! :search_paths

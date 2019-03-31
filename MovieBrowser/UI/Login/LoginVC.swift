@@ -8,6 +8,7 @@
 
 import UIKit
 import RxCocoa
+import Moya
 
 class LoginVC: BaseViewController<LoginVM> {
 
@@ -25,27 +26,30 @@ class LoginVC: BaseViewController<LoginVM> {
     }
 
     override func bindToViewModel() {
-        let trigger = bLogin.rx.tap
-            .asDriver()
-            .do(onNext: { self.changeInitialInputState() })
-        
         let input = LoginVM.Input(
-            loginTrigger: trigger,
             username: tfUsername.validatedText,
             password: tfPassword.validatedText
         )
         
         let output = viewModel.transform(input: input)
         
-        output.loginResult
-            .drive(onNext: { [unowned self] in
-                switch $0 {
-                case .error(let message):
-                    self.showErrorMessage(message)
-                case .success:
-                    self.navigate(to: .main)
+        bLogin.rx.action = output.loginAction
+       
+        output.loginAction
+            .elements
+            .subscribe { print($0) }
+            .disposed(by: disposeBag)
+        
+        output.loginAction
+            .errors
+            .subscribe {
+                $0.map {
+                    if let error =  as? MoyaError {
+                        print(NetworkError(error))
+                    }
                 }
-            }).disposed(by: disposeBag)
+              
+            }.disposed(by: disposeBag)
         
         output.isLoading
             .drive(onNext: { [unowned self] in

@@ -2,6 +2,7 @@ import UIKit
 import RxSwift
 import MBProgressHUD
 import Loaf
+import Action
 
 class BaseViewController<V>: UIViewController where V: ViewModelType {
     
