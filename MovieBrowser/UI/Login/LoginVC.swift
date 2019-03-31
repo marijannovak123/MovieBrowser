@@ -43,12 +43,7 @@ class LoginVC: BaseViewController<LoginVM> {
         output.loginAction
             .errors
             .subscribe {
-                $0.map {
-                    if let error =  as? MoyaError {
-                        print(NetworkError(error))
-                    }
-                }
-              
+                self.showErrorMessage($0.element?.resolveMessage() ?? "")
             }.disposed(by: disposeBag)
         
         output.isLoading
