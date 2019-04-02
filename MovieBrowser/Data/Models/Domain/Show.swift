@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxDataSources
 
 struct Show: DomainData {
    
@@ -52,6 +53,36 @@ struct Show: DomainData {
         dbShow.voteAverage = self.voteAverage ?? 0.0
         dbShow.voteCount = self.voteCount ?? 0
         return dbShow
+    }
+    
+}
+
+extension Show: IdentifiableType {
+    
+    var identity: Int {
+        return self.id
+    }
+    
+}
+
+struct ShowSection {
+    var shows: [Show]
+    var header: String?
+}
+
+extension ShowSection: AnimatableSectionModelType {
+    
+    var identity: String? {
+        return header
+    }
+    
+    var items: [Show] {
+        return self.shows
+    }
+    
+    init(original: ShowSection, items: [Show]) {
+        self = original
+        self.shows = items
     }
     
 }

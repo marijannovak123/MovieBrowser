@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxDataSources
 
 struct Movie: DomainData {
     
@@ -53,4 +54,34 @@ struct Movie: DomainData {
         return dbMovie
     }
 
+}
+
+extension Movie: IdentifiableType {
+    
+    var identity: Int {
+        return self.id
+    }
+    
+}
+
+struct MovieSection {
+    var movies: [Movie]
+    var header: String?
+}
+
+extension MovieSection: AnimatableSectionModelType {
+    
+    var identity: String? {
+        return header
+    }
+    
+    var items: [Movie] {
+        return self.movies
+    }
+    
+    init(original: MovieSection, items: [Movie]) {
+        self = original
+        self.movies = items
+    }
+    
 }

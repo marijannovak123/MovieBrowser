@@ -39,7 +39,7 @@
 		CAC57469224633CA00593B26 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC57468224633CA00593B26 /* DatabaseManager.swift */; };
 		CAC574712246346300593B26 /* RealmExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5746B2246346200593B26 /* RealmExtensions.swift */; };
 		CAC574722246346300593B26 /* RxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5746C2246346200593B26 /* RxExtensions.swift */; };
-		CAC574732246346300593B26 /* TableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5746D2246346300593B26 /* TableViewExtensions.swift */; };
+		CAC574732246346300593B26 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5746D2246346300593B26 /* ViewExtensions.swift */; };
 		CAC574742246346300593B26 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5746E2246346300593B26 /* StringExtensions.swift */; };
 		CAC574752246346300593B26 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5746F2246346300593B26 /* ViewControllerExtensions.swift */; };
 		CAC574782246351700593B26 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC574772246351700593B26 /* Screen.swift */; };
@@ -78,6 +78,9 @@
 		CAE424FF224584E8005F8158 /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424FA224584E8005F8158 /* Persistable.swift */; };
 		CAE42500224584E8005F8158 /* DomainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE424FB224584E8005F8158 /* DomainData.swift */; };
 		CAE4250322458563005F8158 /* UIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE4250222458563005F8158 /* UIResult.swift */; };
+		CAE91A152253774800803683 /* MediaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE91A142253774800803683 /* MediaResponse.swift */; };
+		CAE91A192253796200803683 /* MediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE91A172253796200803683 /* MediaCell.swift */; };
+		CAE91A1A2253796200803683 /* MediaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAE91A182253796200803683 /* MediaCell.xib */; };
 		CAFF2A0D224E269D00B229A3 /* TrendingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF2A0C224E269D00B229A3 /* TrendingVM.swift */; };
 		CAFF2A0F224E278F00B229A3 /* MediaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFF2A0E224E278F00B229A3 /* MediaRepository.swift */; };
 /* End PBXBuildFile section */
@@ -144,7 +147,7 @@
 		CAC57468224633CA00593B26 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		CAC5746B2246346200593B26 /* RealmExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmExtensions.swift; sourceTree = "<group>"; };
 		CAC5746C2246346200593B26 /* RxExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxExtensions.swift; sourceTree = "<group>"; };
-		CAC5746D2246346300593B26 /* TableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewExtensions.swift; sourceTree = "<group>"; };
+		CAC5746D2246346300593B26 /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		CAC5746E2246346300593B26 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		CAC5746F2246346300593B26 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
 		CAC574772246351700593B26 /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
@@ -183,6 +186,9 @@
 		CAE424FA224584E8005F8158 /* Persistable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
 		CAE424FB224584E8005F8158 /* DomainData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainData.swift; sourceTree = "<group>"; };
 		CAE4250222458563005F8158 /* UIResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIResult.swift; sourceTree = "<group>"; };
+		CAE91A142253774800803683 /* MediaResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaResponse.swift; sourceTree = "<group>"; };
+		CAE91A172253796200803683 /* MediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCell.swift; sourceTree = "<group>"; };
+		CAE91A182253796200803683 /* MediaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaCell.xib; sourceTree = "<group>"; };
 		CAFF2A0C224E269D00B229A3 /* TrendingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingVM.swift; sourceTree = "<group>"; };
 		CAFF2A0E224E278F00B229A3 /* MediaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -241,6 +247,7 @@
 		CA00C454224D1B13000E288C /* Trending */ = {
 			isa = PBXGroup;
 			children = (
+				CAE91A162253793900803683 /* Media Cell */,
 				CA00C457224D1B39000E288C /* TrendingVC.swift */,
 				CA00C458224D1B39000E288C /* TrendingVC.xib */,
 				CAFF2A0C224E269D00B229A3 /* TrendingVM.swift */,
@@ -359,7 +366,7 @@
 			children = (
 				CAC5746C2246346200593B26 /* RxExtensions.swift */,
 				CAC5746E2246346300593B26 /* StringExtensions.swift */,
-				CAC5746D2246346300593B26 /* TableViewExtensions.swift */,
+				CAC5746D2246346300593B26 /* ViewExtensions.swift */,
 				CAC5746F2246346300593B26 /* ViewControllerExtensions.swift */,
 				CA00C450224D0AC9000E288C /* ResultExtensions.swift */,
 				9F6C0F13225119B4009065CD /* ActionExtensions.swift */,
@@ -493,6 +500,7 @@
 				CAC5748722463BA900593B26 /* TokenResponse.swift */,
 				CA4FB1AE2249023A002F72C5 /* SessionResponse.swift */,
 				CACF713F224BC797001B6632 /* GenresResponse.swift */,
+				CAE91A142253774800803683 /* MediaResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -568,6 +576,15 @@
 				CAA2638C224A7AE700E6FB4D /* TimeWindow.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		CAE91A162253793900803683 /* Media Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CAE91A172253796200803683 /* MediaCell.swift */,
+				CAE91A182253796200803683 /* MediaCell.xib */,
+			);
+			path = "Media Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -683,6 +700,7 @@
 			files = (
 				CAE424EF224583CB005F8158 /* LoginVC.xib in Resources */,
 				CAC79BFE2244FD95007CFD38 /* MovieSlide.xib in Resources */,
+				CAE91A1A2253796200803683 /* MediaCell.xib in Resources */,
 				CAC79C0C2245296C007CFD38 /* Keys.plist in Resources */,
 				CA00C45A224D1B39000E288C /* TrendingVC.xib in Resources */,
 				CAC79BF22244CC0B007CFD38 /* SwipeVC.xib in Resources */,
@@ -842,6 +860,7 @@
 				CAC574662246333200593B26 /* AuthRepository.swift in Sources */,
 				CACF7140224BC797001B6632 /* GenresResponse.swift in Sources */,
 				CAE424FD224584E8005F8158 /* ReusableCell.swift in Sources */,
+				CAE91A152253774800803683 /* MediaResponse.swift in Sources */,
 				CA59D1572243DB2C0021B1DF /* AppDelegate.swift in Sources */,
 				CAC574782246351700593B26 /* Screen.swift in Sources */,
 				CAC574722246346300593B26 /* RxExtensions.swift in Sources */,
@@ -849,7 +868,7 @@
 				CAC79C0222451C8C007CFD38 /* Colors.swift in Sources */,
 				CAFF2A0F224E278F00B229A3 /* MediaRepository.swift in Sources */,
 				CAC57469224633CA00593B26 /* DatabaseManager.swift in Sources */,
-				CAC574732246346300593B26 /* TableViewExtensions.swift in Sources */,
+				CAC574732246346300593B26 /* ViewExtensions.swift in Sources */,
 				CAE424E122457CA2005F8158 /* Network.swift in Sources */,
 				CA00C465224D1DB8000E288C /* MainVC.swift in Sources */,
 				CAC5747D224636EC00593B26 /* AuthService.swift in Sources */,
@@ -894,6 +913,7 @@
 				CAE424DF224576F4005F8158 /* LoginRequest.swift in Sources */,
 				CAC79C0A22452717007CFD38 /* ApiEndpoint.swift in Sources */,
 				CA4FB1B322492A9D002F72C5 /* AppTextField.swift in Sources */,
+				CAE91A192253796200803683 /* MediaCell.swift in Sources */,
 				CA00C453224D19E2000E288C /* MainMenu.swift in Sources */,
 				CACF7135224B6ED9001B6632 /* DBShow.swift in Sources */,
 			);

@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TrendingVC" customModule="MovieBrowser" customModuleProvider="target">
             <connections>
+                <outlet property="cvMovies" destination="BHg-nn-Sf5" id="V8Z-Wh-Orq"/>
+                <outlet property="cvShows" destination="dhE-pR-eLr" id="xdq-O5-bH4"/>
                 <outlet property="tfMediaType" destination="576-XS-zju" id="Jxs-6X-p5u"/>
                 <outlet property="tfTimeWindow" destination="OHG-O9-g8K" id="t6M-wb-lj4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -48,18 +50,46 @@
                         <constraint firstAttribute="width" constant="10" id="Xyr-ZV-MCP"/>
                     </constraints>
                 </imageView>
+                <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="dhE-pR-eLr" userLabel="Show Collection View">
+                    <rect key="frame" x="8" y="98" width="398" height="798"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Gry-wI-2qY">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BHg-nn-Sf5" userLabel="Movies Collection View">
+                    <rect key="frame" x="8" y="106" width="398" height="790"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="012-uA-gn0">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="dhE-pR-eLr" secondAttribute="bottom" id="56v-UK-3yu"/>
                 <constraint firstItem="OHG-O9-g8K" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.25" id="8xD-T1-4mm"/>
                 <constraint firstItem="aOv-C0-bsS" firstAttribute="centerY" secondItem="OHG-O9-g8K" secondAttribute="centerY" constant="2" id="Axf-YR-P1r"/>
                 <constraint firstItem="OHG-O9-g8K" firstAttribute="leading" secondItem="576-XS-zju" secondAttribute="trailing" constant="4" id="Cqy-qs-hxz"/>
+                <constraint firstItem="dhE-pR-eLr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="DiP-Ev-kza"/>
                 <constraint firstItem="576-XS-zju" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.25" id="Dsn-Nt-7AB"/>
                 <constraint firstItem="576-XS-zju" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="G9q-53-QaG"/>
                 <constraint firstItem="OHG-O9-g8K" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="GK0-ha-BKo"/>
+                <constraint firstItem="BHg-nn-Sf5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="H64-k7-Jbz"/>
+                <constraint firstAttribute="bottom" secondItem="BHg-nn-Sf5" secondAttribute="bottom" id="JWD-8S-ssM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dhE-pR-eLr" secondAttribute="trailing" constant="8" id="Nzi-kE-qGs"/>
                 <constraint firstItem="576-XS-zju" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="Sl5-mY-Ky5"/>
                 <constraint firstItem="FDp-G4-G4Q" firstAttribute="trailing" secondItem="576-XS-zju" secondAttribute="trailing" constant="-5" id="cLC-Uo-s0T"/>
                 <constraint firstItem="FDp-G4-G4Q" firstAttribute="centerY" secondItem="576-XS-zju" secondAttribute="centerY" constant="2" id="dua-B3-udJ"/>
+                <constraint firstItem="dhE-pR-eLr" firstAttribute="top" secondItem="OHG-O9-g8K" secondAttribute="bottom" constant="8" id="nqB-vT-3Bx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BHg-nn-Sf5" secondAttribute="trailing" constant="8" id="tP0-Lp-kwP"/>
+                <constraint firstItem="BHg-nn-Sf5" firstAttribute="top" secondItem="OHG-O9-g8K" secondAttribute="bottom" constant="16" id="whQ-na-40B"/>
                 <constraint firstItem="aOv-C0-bsS" firstAttribute="trailing" secondItem="OHG-O9-g8K" secondAttribute="trailing" constant="-5" id="zJJ-ui-dOc"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

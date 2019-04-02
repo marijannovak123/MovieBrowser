@@ -9,20 +9,25 @@
 import Action
 import Moya
 
-extension ActionError {
+extension Optional where Wrapped == ActionError {
     
     private static let defaultMessage = "Unknown error"
     
     func resolveMessage() -> String {
-        switch self {
-        case .notEnabled:
-            return ActionError.defaultMessage
-        case .underlyingError(let error):
-            if let resolvedError = error as? MoyaError {
-                return NetworkError(resolvedError).errorMessage
+        if let unwrapped = self {
+            switch unwrapped {
+            case .notEnabled:
+                return Constants.defaultErrorMessage
+            case .underlyingError(let error):
+                if let resolvedError = error as? MoyaError {
+                    return NetworkError(resolvedError).errorMessage
+                }
+                return Constants.defaultErrorMessage
             }
-            return ActionError.defaultMessage
+        } else {
+            return Constants.defaultErrorMessage
         }
+       
     }
     
 }

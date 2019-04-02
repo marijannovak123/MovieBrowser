@@ -8,7 +8,6 @@
 
 import UIKit
 import RxCocoa
-import Moya
 
 class LoginVC: BaseViewController<LoginVM> {
 
@@ -24,7 +23,7 @@ class LoginVC: BaseViewController<LoginVM> {
         tfUsername.errorLabel = lUsernameError
         tfPassword.errorLabel = lPasswordError
     }
-
+    
     override func bindToViewModel() {
         let input = LoginVM.Input(
             username: tfUsername.validatedText,
@@ -37,18 +36,19 @@ class LoginVC: BaseViewController<LoginVM> {
        
         output.loginAction
             .elements
-            .subscribe { print($0) }
-            .disposed(by: disposeBag)
+            .subscribe ( onNext: { [weak self] in
+                self?.navigate(to: .main)
+            }).disposed(by: disposeBag)
         
         output.loginAction
             .errors
-            .subscribe {
-                self.showErrorMessage($0.element?.resolveMessage() ?? "")
+            .subscribe { [weak self] in
+                self?.showErrorMessage($0.element.resolveMessage())
             }.disposed(by: disposeBag)
         
         output.isLoading
-            .drive(onNext: { [unowned self] in
-                self.showLoading($0)
+            .drive(onNext: { [weak self] in
+                self?.showLoading($0)
             }).disposed(by: disposeBag)
     }
 

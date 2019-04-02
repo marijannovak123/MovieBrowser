@@ -24,8 +24,10 @@ class BaseViewController<V>: UIViewController where V: ViewModelType {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "background"))
-
         makeKeyboardDismissable()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         bindToViewModel()
     }
     
