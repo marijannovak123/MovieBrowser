@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxDataSources
 
 class TrendingVC: BaseViewController<TrendingVM> {
     
@@ -15,6 +16,10 @@ class TrendingVC: BaseViewController<TrendingVM> {
     
     private var typePickerView: UIPickerView!
     private var timePickerView: UIPickerView!
+    
+    @IBOutlet weak var cvMovies: UICollectionView!
+    @IBOutlet weak var cvShows: UICollectionView!
+    
     
     private var selectedMediaType: MediaType {
         let index = typePickerView.selectedRow(inComponent: 0)
@@ -26,15 +31,18 @@ class TrendingVC: BaseViewController<TrendingVM> {
         return TimeWindow.allValues[index]
     }
     
+    private var movieDataSource: RxCollectionViewSectionedAnimatedDataSource<MovieSection>? = nil
+    private var showDataSource: RxCollectionViewSectionedAnimatedDataSource<ShowSection>? = nil
+    
     override func viewDidLoad() {
+        super.viewDidLoad()
+
         title = "Trending"
         
         timePickerView = createPickerView()
         typePickerView = createPickerView()
         setupPickers()
         
-        super.viewDidLoad()
-     
         tfMediaType.delegate = self
         tfTimeWindow.delegate = self
         
@@ -42,7 +50,8 @@ class TrendingVC: BaseViewController<TrendingVM> {
         tfTimeWindow.text = selectedTimeWindow.rawValue
         
         navigationController?.navigationBar.barStyle = .black
-
+        
+        setupCollectionViews()
     }
     
     override func bindToViewModel() {
@@ -66,9 +75,25 @@ class TrendingVC: BaseViewController<TrendingVM> {
         
         let output = viewModel.transform(input: input)
         
-        output.trendingMovies.drive(onNext: { print($0) }).disposed(by: disposeBag)
-        output.trendingShows.drive(onNext: { print($0) }).disposed(by: disposeBag)
+        output.trendingMovies
+            .drive(cvMovies.rx.items(dataSource: movieDataSource!))
+            .disposed(by: disposeBag)
+        
+        output.trendingShows
+            .drive(cvShows.rx.items(dataSource: showDataSource!))
+            .disposed(by: disposeBag)
     }
+    
+    private func handleTableViewVisibility(_ mediaType: String?) {
+        if let type = mediaType {
+            cvMovies.isHidden = type != MediaType.movie.rawValue
+            cvShows.isHidden = type == MediaType.movie.rawValue
+        }
+    }
+    
+}
+
+extension TrendingVC: UIPickerViewDelegate, UIPickerViewDataSource {
     
     private func createPickerView() -> UIPickerView {
         let pickerView = UIPickerView()
@@ -111,17 +136,6 @@ class TrendingVC: BaseViewController<TrendingVM> {
         tfTimeWindow.text = selectedTimeWindow.rawValue
     }
     
-    private func handleTableViewVisibility(_ mediaType: String?) {
-        if let type = mediaType {
-//            tvMovies.isHidden = type != MediaType.movie.rawValue
-//            tvShows.isHidden = type == MediaType.movie.rawValue
-        }
-    }
-    
-}
-
-extension TrendingVC: UIPickerViewDelegate, UIPickerViewDataSource {
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -154,6 +168,40 @@ extension TrendingVC: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return false
+    }
+    
+}
+
+extension TrendingVC: UICollectionViewDelegateFlowLayout {
+    
+    func setupCollectionViews() {
+        cvMovies.registerCell(cellType: MediaCell.self)
+        cvMovies.rx.setDelegate(self)
+            .disposed(by: disposeBag)
+        
+        cvShows.registerCell(cellType: MediaCell.self)
+        cvShows.rx.setDelegate(self)
+            .disposed(by: disposeBag)
+        
+        movieDataSource = RxCollectionViewSectionedAnimatedDataSource<MovieSection> (
+            configureCell: { _, cv, ip, movie in
+                let cell = cv.dequeueReusableCell(cellType: MediaCell.self, for: ip)!
+                cell.setup(with: movie)
+                return cell
+            }
+        )
+        
+        showDataSource = RxCollectionViewSectionedAnimatedDataSource<ShowSection> (
+            configureCell: { _, cv, ip, show in
+                let cell = cv.dequeueReusableCell(cellType: MediaCell.self, for: ip)!
+                cell.setup(with: show)
+                return cell
+            }
+        )
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 200, height: 300)
     }
     
 }

@@ -20,8 +20,8 @@ class TrendingVM: ViewModelType {
     }
     
     struct Output {
-        let trendingMovies: Driver<UIResult<[Movie]>>
-        let trendingShows: Driver<UIResult<[Show]>>
+        let trendingMovies: Driver<[MovieSection]>
+        let trendingShows: Driver<[ShowSection]>
     }
     
     private let repository: MediaRepository
@@ -39,10 +39,10 @@ class TrendingVM: ViewModelType {
         let trendingMovies = movieInput
             .asObservable()
             .distinctUntilChanged()
-            .flatMapToResult {
+            .flatMap {
                 self.repository.getTrendingMovies(time: $0)
-            }.map { $0.toUIResult() }
-            .asDriver(onErrorJustReturn: UIResult.defaultError)
+            }.map { [MovieSection(movies: $0, header: nil)] }
+            .asDriver(onErrorJustReturn: [])
         
         let showInput = Driver.combineLatest(
             input.showUpdateTrigger,
@@ -53,10 +53,10 @@ class TrendingVM: ViewModelType {
             .withLatestFrom(input.timeWindow)
             .asObservable()
             .distinctUntilChanged()
-            .flatMapToResult {
+            .flatMap {
                 self.repository.getTrendingShows(time: $0)
-            }.map { $0.toUIResult() }
-            .asDriver(onErrorJustReturn: UIResult.defaultError)
+            }.map { [ShowSection(shows: $0, header: nil)] }
+            .asDriver(onErrorJustReturn: [])
         
         return Output(trendingMovies: trendingMovies, trendingShows: trendingShows)
     }

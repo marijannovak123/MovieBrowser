@@ -63,14 +63,14 @@ extension ObservableType {
         return Observable.deferred {.just(block())}
     }
     
-    func startLoading(_ loadingRelay: BehaviorRelay<Bool>) -> Observable<Self.E> {
+    func startActionLoading(_ loadingRelay: BehaviorRelay<Bool>) -> Observable<Self.E> {
         return self.do(onNext: { _ in loadingRelay.accept(true) })
     }
     
-    func stopLoading(_ loadingRelay: BehaviorRelay<Bool>) -> Observable<Self.E> {
+    func stopActionLoading(_ loadingRelay: BehaviorRelay<Bool>) -> Observable<Self.E> {
         return self.do (
             onNext: { _ in loadingRelay.accept(false) },
-            onError: { _ in loadingRelay.accept(false) }
+            onDispose: { loadingRelay.accept(false) }
         )
     }
     

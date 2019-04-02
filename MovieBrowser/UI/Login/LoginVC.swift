@@ -23,33 +23,32 @@ class LoginVC: BaseViewController<LoginVM> {
         tfUsername.errorLabel = lUsernameError
         tfPassword.errorLabel = lPasswordError
     }
-
+    
     override func bindToViewModel() {
-        let trigger = bLogin.rx.tap
-            .asDriver()
-            .do(onNext: { self.changeInitialInputState() })
-        
         let input = LoginVM.Input(
-            loginTrigger: trigger,
             username: tfUsername.validatedText,
             password: tfPassword.validatedText
         )
         
         let output = viewModel.transform(input: input)
         
-        output.loginResult
-            .drive(onNext: { [unowned self] in
-                switch $0 {
-                case .error(let message):
-                    self.showErrorMessage(message)
-                case .success:
-                    self.navigate(to: .main)
-                }
+        bLogin.rx.action = output.loginAction
+       
+        output.loginAction
+            .elements
+            .subscribe ( onNext: { [weak self] in
+                self?.navigate(to: .main)
             }).disposed(by: disposeBag)
         
+        output.loginAction
+            .errors
+            .subscribe { [weak self] in
+                self?.showErrorMessage($0.element.resolveMessage())
+            }.disposed(by: disposeBag)
+        
         output.isLoading
-            .drive(onNext: { [unowned self] in
-                self.showLoading($0)
+            .drive(onNext: { [weak self] in
+                self?.showLoading($0)
             }).disposed(by: disposeBag)
     }
 

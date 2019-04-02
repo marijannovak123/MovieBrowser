@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ReusableCell where Self: UITableViewCell  {
+protocol ReusableCell  {
     associatedtype Data
     
     static var identifier: String { get }
@@ -22,5 +22,4 @@ extension ReusableCell {
         return String(describing: self)
     }
 }
-
 

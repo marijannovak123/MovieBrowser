@@ -2,6 +2,7 @@ import UIKit
 import RxSwift
 import MBProgressHUD
 import Loaf
+import Action
 
 class BaseViewController<V>: UIViewController where V: ViewModelType {
     
@@ -23,8 +24,10 @@ class BaseViewController<V>: UIViewController where V: ViewModelType {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "background"))
-
         makeKeyboardDismissable()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         bindToViewModel()
     }
     
