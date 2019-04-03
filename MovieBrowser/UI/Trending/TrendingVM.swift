@@ -49,7 +49,6 @@ class TrendingVM: ViewModelType {
         ) { $1 }
         
         let trendingShows = showInput
-            .withLatestFrom(input.timeWindow)
             .asObservable()
             .flatMap {
                 self.repository.getTrendingShows(time: $0)
