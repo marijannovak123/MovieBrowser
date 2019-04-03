@@ -9,7 +9,7 @@
 import RxSwift
 import RxCocoa
 
-typealias TrendingSelection = (MediaType, TimeWindow)
+typealias SelectedItem = (mediaId: Int, type: MediaType)
 
 class TrendingVM: ViewModelType {
     
@@ -17,11 +17,14 @@ class TrendingVM: ViewModelType {
         let movieUpdateTrigger: Driver<Void>
         let showUpdateTrigger: Driver<Void>
         let timeWindow: Driver<TimeWindow>
+        let movieSelectedTrigger: Driver<Movie>
+        let showSelectedTrigger: Driver<Show>
     }
     
     struct Output {
         let trendingMovies: Driver<[MovieSection]>
         let trendingShows: Driver<[ShowSection]>
+        let navigateToDetailsEvent: Driver<SelectedItem>
     }
     
     private let repository: MediaRepository
@@ -55,7 +58,14 @@ class TrendingVM: ViewModelType {
             }.map { [ShowSection(shows: $0, header: nil)] }
             .asDriver(onErrorJustReturn: [])
         
-        return Output(trendingMovies: trendingMovies, trendingShows: trendingShows)
+        let movieSelectedItem = input.movieSelectedTrigger
+                .map { SelectedItem(mediaId: $0.id, type: .movie) }
+        let showSelectedItem = input.showSelectedTrigger
+                .map { SelectedItem(mediaId: $0.id, type: .tv) }
+        
+        let navigateToDetails = Driver.merge(movieSelectedItem, showSelectedItem)
+        
+        return Output(trendingMovies: trendingMovies, trendingShows: trendingShows, navigateToDetailsEvent: navigateToDetails)
     }
     
 }

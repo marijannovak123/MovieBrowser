@@ -13,12 +13,11 @@ class TrendingVC: BaseViewController<TrendingVM> {
     
     @IBOutlet weak var tfMediaType: UITextField!
     @IBOutlet weak var tfTimeWindow: UITextField!
+    @IBOutlet weak var cvMovies: UICollectionView!
+    @IBOutlet weak var cvShows: UICollectionView!
     
     private var typePickerView: UIPickerView!
     private var timePickerView: UIPickerView!
-    
-    @IBOutlet weak var cvMovies: UICollectionView!
-    @IBOutlet weak var cvShows: UICollectionView!
     
     private var selectedMediaType: MediaType {
         let index = typePickerView.selectedRow(inComponent: 0)
@@ -34,10 +33,13 @@ class TrendingVC: BaseViewController<TrendingVM> {
     private var showDataSource: RxCollectionViewSectionedAnimatedDataSource<ShowSection>? = nil
     
     override func viewDidLoad() {
+        setup()
         super.viewDidLoad()
-
+    }
+    
+    func setup() {
         title = "Trending"
-        
+//        navigationController?.setNavigationBarHidden(true, animated: false)
         timePickerView = createPickerView()
         typePickerView = createPickerView()
         setupPickers()
@@ -52,7 +54,8 @@ class TrendingVC: BaseViewController<TrendingVM> {
     
     override func bindToViewModel() {
         let mediaTypeTrigger = tfMediaType.rx.text
-            .asDriver()
+            .distinctUntilChanged()
+            .asDriver(onErrorJustReturn: "")
         
         let movieTrigger = mediaTypeTrigger
             .filter { $0 == MediaType.movie.rawValue }
@@ -65,10 +68,15 @@ class TrendingVC: BaseViewController<TrendingVM> {
             .asDriver()
             .map { _ in self.selectedTimeWindow }
         
+        let movieSelected = cvMovies.rx.modelSelected(Movie.self).asDriver()
+        let showSelected = cvShows.rx.modelSelected(Show.self).asDriver()
+        
         let input = TrendingVM.Input(
             movieUpdateTrigger: movieTrigger,
             showUpdateTrigger: showTrigger,
-            timeWindow: timeTrigger
+            timeWindow: timeTrigger,
+            movieSelectedTrigger: movieSelected,
+            showSelectedTrigger: showSelected
         )
         
         let output = viewModel.transform(input: input)
@@ -80,6 +88,11 @@ class TrendingVC: BaseViewController<TrendingVM> {
         output.trendingShows
             .drive(cvShows.rx.items(dataSource: showDataSource!))
             .disposed(by: disposeBag)
+        
+        output.navigateToDetailsEvent
+            .drive(onNext: { [weak self] in
+                self?.navigate(to: .details(mediaId: $0.mediaId, mediaType: $0.type))
+            }).disposed(by: disposeBag)
     }
     
     private func handleTableViewVisibility(_ mediaType: String?) {
@@ -129,9 +142,19 @@ extension TrendingVC: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     @objc func pickerDone() {
+        
+        if tfTimeWindow.text != selectedTimeWindow.rawValue || tfMediaType.text != selectedMediaType.rawValue {
+            if cvMovies.isHidden {
+                cvShows.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+            } else {
+                cvMovies.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+            }
+        }
+        
         tfMediaType.text = selectedMediaType.rawValue
         tfTimeWindow.text = selectedTimeWindow.rawValue
         handleTableViewVisibility(selectedMediaType.rawValue)
+        
         view.endEditing(true)
     }
     
@@ -171,7 +194,7 @@ extension TrendingVC: UITextFieldDelegate {
     
 }
 
-extension TrendingVC: UICollectionViewDelegateFlowLayout {
+extension TrendingVC: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
     func setupCollectionViews() {
         cvMovies.registerCell(cellType: MediaCell.self)
@@ -200,7 +223,16 @@ extension TrendingVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 300)
+        return CGSize(width: 250, height: 400)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == cvMovies {
+            
+            
+        } else {
+            
+        }
     }
     
 }

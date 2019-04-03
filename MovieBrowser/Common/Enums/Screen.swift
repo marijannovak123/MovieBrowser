@@ -11,6 +11,8 @@ enum Screen {
     case search
     case account
     
+    case details(mediaId: Int, mediaType: MediaType)
+    
     func getController() -> UIViewController? {
         let container = AppDelegate.instance.viewControllerContainer!
         
@@ -29,6 +31,8 @@ enum Screen {
             controller = container.resolve(SearchVC.self)!
         case .account:
             controller = container.resolve(AccountVC.self)!
+        case .details(let mediaId, let mediaType):
+            controller = container.resolve(DetailsVC.self, arguments: mediaId, mediaType)!
         }
         
         if self.isRootController() {

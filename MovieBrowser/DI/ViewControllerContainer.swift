@@ -37,6 +37,13 @@ class ViewControllerContainer {
             SearchVC()
         }
         
+        container.register(DetailsVC.self) { (r: Resolver, movieId: Int, mediaType: MediaType) in
+            let vc = DetailsVC(viewModel: r.resolve(DetailsVM.self)!)
+            vc.movieId = movieId
+            vc.mediaType = mediaType
+            return vc
+        }
+        
         return container
     }
 }

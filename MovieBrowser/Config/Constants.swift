@@ -25,5 +25,5 @@ class Constants {
     public static let sessionId = "sessionId"
     public static let defaultErrorMessage = "Unknown error"
     
-    public static let imageUrlPrefix = "https://image.tmdb.org/t/p/w92"
+    public static let imageUrlPrefix = "https://image.tmdb.org/t/p/w185"
 }

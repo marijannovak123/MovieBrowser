@@ -57,6 +57,9 @@
 		CAC79C0222451C8C007CFD38 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC79C0122451C8C007CFD38 /* Colors.swift */; };
 		CAC79C0A22452717007CFD38 /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC79C0922452717007CFD38 /* ApiEndpoint.swift */; };
 		CAC79C0C2245296C007CFD38 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = CAC79C0B2245296C007CFD38 /* Keys.plist */; };
+		CACC9BE62254CEBA0056F4A3 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC9BE42254CEBA0056F4A3 /* DetailsVC.swift */; };
+		CACC9BE72254CEBA0056F4A3 /* DetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CACC9BE52254CEBA0056F4A3 /* DetailsVC.xib */; };
+		CACC9BE92254CECF0056F4A3 /* DetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC9BE82254CECF0056F4A3 /* DetailsVM.swift */; };
 		CACF712D224B6E1E001B6632 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACF712C224B6E1E001B6632 /* Movie.swift */; };
 		CACF712F224B6E5F001B6632 /* DBMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACF712E224B6E5F001B6632 /* DBMovie.swift */; };
 		CACF7131224B6EC2001B6632 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACF7130224B6EC2001B6632 /* Genre.swift */; };
@@ -165,6 +168,9 @@
 		CAC79C0122451C8C007CFD38 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		CAC79C0922452717007CFD38 /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
 		CAC79C0B2245296C007CFD38 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		CACC9BE42254CEBA0056F4A3 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
+		CACC9BE52254CEBA0056F4A3 /* DetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsVC.xib; sourceTree = "<group>"; };
+		CACC9BE82254CECF0056F4A3 /* DetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVM.swift; sourceTree = "<group>"; };
 		CACF712C224B6E1E001B6632 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		CACF712E224B6E5F001B6632 /* DBMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMovie.swift; sourceTree = "<group>"; };
 		CACF7130224B6EC2001B6632 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
@@ -436,6 +442,7 @@
 		CAC79C05224521E5007CFD38 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				CACC9BE32254CE890056F4A3 /* Details */,
 				CA00C456224D1B22000E288C /* Account */,
 				CA00C455224D1B1C000E288C /* Search */,
 				CA00C454224D1B13000E288C /* Trending */,
@@ -465,6 +472,16 @@
 				CAE424E022457CA2005F8158 /* Network.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		CACC9BE32254CE890056F4A3 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				CACC9BE42254CEBA0056F4A3 /* DetailsVC.swift */,
+				CACC9BE52254CEBA0056F4A3 /* DetailsVC.xib */,
+				CACC9BE82254CECF0056F4A3 /* DetailsVM.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		CACF7138224B9917001B6632 /* Main */ = {
@@ -706,6 +723,7 @@
 				CAC79BF22244CC0B007CFD38 /* SwipeVC.xib in Resources */,
 				CA59D1612243DB2E0021B1DF /* LaunchScreen.storyboard in Resources */,
 				CA59D15E2243DB2E0021B1DF /* Assets.xcassets in Resources */,
+				CACC9BE72254CEBA0056F4A3 /* DetailsVC.xib in Resources */,
 				CA00C462224D1B58000E288C /* AccountVC.xib in Resources */,
 				CA00C45E224D1B47000E288C /* SearchVC.xib in Resources */,
 			);
@@ -868,6 +886,8 @@
 				CAC79C0222451C8C007CFD38 /* Colors.swift in Sources */,
 				CAFF2A0F224E278F00B229A3 /* MediaRepository.swift in Sources */,
 				CAC57469224633CA00593B26 /* DatabaseManager.swift in Sources */,
+				CACC9BE62254CEBA0056F4A3 /* DetailsVC.swift in Sources */,
+				CACC9BE92254CECF0056F4A3 /* DetailsVM.swift in Sources */,
 				CAC574732246346300593B26 /* ViewExtensions.swift in Sources */,
 				CAE424E122457CA2005F8158 /* Network.swift in Sources */,
 				CA00C465224D1DB8000E288C /* MainVC.swift in Sources */,

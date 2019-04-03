@@ -20,18 +20,15 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MP0-hH-EYY" userLabel="Poster">
-                        <rect key="frame" x="8" y="8" width="225" height="249"/>
+                        <rect key="frame" x="8" y="8" width="225" height="262.5"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOL-tB-H3O" userLabel="Title">
-                        <rect key="frame" x="16" y="289" width="209" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="I9c-2a-7fg"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOL-tB-H3O" userLabel="Title">
+                        <rect key="frame" x="16" y="282.5" width="209" height="27.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Iwb-EV-v6e">
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Iwb-EV-v6e">
                         <rect key="frame" x="32" y="326" width="177" height="24"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popularity" translatesAutoresizingMaskIntoConstraints="NO" id="a2g-X1-sCP" userLabel="Popularity Image">
@@ -42,22 +39,22 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Popularity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AmQ-fA-DEC" userLabel="Popularity">
-                                <rect key="frame" x="36" y="0.0" width="59.5" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="30" y="0.0" width="77" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="views" translatesAutoresizingMaskIntoConstraints="NO" id="Sny-yi-jX9" userLabel="Views Image">
-                                <rect key="frame" x="107.5" y="0.0" width="24" height="24"/>
+                                <rect key="frame" x="113" y="0.0" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="Ag9-PH-GKu"/>
                                     <constraint firstAttribute="height" constant="24" id="M08-A4-QHE"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Views" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LuV-2J-Txo" userLabel="View Count">
-                                <rect key="frame" x="143.5" y="0.0" width="33.5" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Views" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LuV-2J-Txo" userLabel="View Count">
+                                <rect key="frame" x="143" y="0.0" width="34" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -74,7 +71,7 @@
                 <constraint firstItem="MP0-hH-EYY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="jQH-Qp-kCV"/>
                 <constraint firstItem="Iwb-EV-v6e" firstAttribute="top" secondItem="xOL-tB-H3O" secondAttribute="bottom" constant="16" id="mJm-xH-gOS"/>
                 <constraint firstItem="MP0-hH-EYY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="n73-nI-lNX"/>
-                <constraint firstItem="xOL-tB-H3O" firstAttribute="top" secondItem="MP0-hH-EYY" secondAttribute="bottom" constant="32" id="oW5-1D-DDk"/>
+                <constraint firstItem="xOL-tB-H3O" firstAttribute="top" secondItem="MP0-hH-EYY" secondAttribute="bottom" constant="12" id="oW5-1D-DDk"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="241" height="358"/>

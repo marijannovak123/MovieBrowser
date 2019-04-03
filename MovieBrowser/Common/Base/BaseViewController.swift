@@ -24,11 +24,8 @@ class BaseViewController<V>: UIViewController where V: ViewModelType {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "background"))
-        makeKeyboardDismissable()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         bindToViewModel()
+        makeKeyboardDismissable()
     }
     
     //have to override!
@@ -63,7 +60,9 @@ class BaseViewController<V>: UIViewController where V: ViewModelType {
     }
     
     func makeKeyboardDismissable() {
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
     }
     
     @objc func dismissKeyboard() {

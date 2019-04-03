@@ -21,6 +21,10 @@ class ViewModelContainer {
             TrendingVM(repository: $0.resolve(MediaRepository.self)!)
         }
         
+        container.register(DetailsVM.self) {
+            DetailsVM(repository: $0.resolve(MediaRepository.self)!)
+        }
+        
         return container
     }
 }
