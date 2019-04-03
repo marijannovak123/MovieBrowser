@@ -38,7 +38,6 @@ class TrendingVM: ViewModelType {
         
         let trendingMovies = movieInput
             .asObservable()
-            .distinctUntilChanged()
             .flatMap {
                 self.repository.getTrendingMovies(time: $0)
             }.map { [MovieSection(movies: $0, header: nil)] }
@@ -52,7 +51,6 @@ class TrendingVM: ViewModelType {
         let trendingShows = showInput
             .withLatestFrom(input.timeWindow)
             .asObservable()
-            .distinctUntilChanged()
             .flatMap {
                 self.repository.getTrendingShows(time: $0)
             }.map { [ShowSection(shows: $0, header: nil)] }

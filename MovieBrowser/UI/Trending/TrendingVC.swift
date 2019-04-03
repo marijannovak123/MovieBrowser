@@ -20,17 +20,16 @@ class TrendingVC: BaseViewController<TrendingVM> {
     @IBOutlet weak var cvMovies: UICollectionView!
     @IBOutlet weak var cvShows: UICollectionView!
     
-    
     private var selectedMediaType: MediaType {
         let index = typePickerView.selectedRow(inComponent: 0)
         return MediaType.trendingTypes[index]
     }
-    
+
     private var selectedTimeWindow: TimeWindow {
         let index = timePickerView.selectedRow(inComponent: 0)
         return TimeWindow.allValues[index]
     }
-    
+
     private var movieDataSource: RxCollectionViewSectionedAnimatedDataSource<MovieSection>? = nil
     private var showDataSource: RxCollectionViewSectionedAnimatedDataSource<ShowSection>? = nil
     
@@ -46,9 +45,6 @@ class TrendingVC: BaseViewController<TrendingVM> {
         tfMediaType.delegate = self
         tfTimeWindow.delegate = self
         
-        tfMediaType.text = selectedMediaType.rawValue
-        tfTimeWindow.text = selectedTimeWindow.rawValue
-        
         navigationController?.navigationBar.barStyle = .black
         
         setupCollectionViews()
@@ -57,11 +53,13 @@ class TrendingVC: BaseViewController<TrendingVM> {
     override func bindToViewModel() {
         let mediaTypeTrigger = tfMediaType.rx.text
             .asDriver()
-            .do(onNext: handleTableViewVisibility)
-            .mapToVoid()
         
-        let movieTrigger = mediaTypeTrigger.filter { _ in self.selectedMediaType == .movie }
-        let showTrigger = mediaTypeTrigger.filter { _ in self.selectedMediaType == .tv }
+        let movieTrigger = mediaTypeTrigger
+            .filter { $0 == MediaType.movie.rawValue }
+            .mapToVoid()
+        let showTrigger = mediaTypeTrigger
+            .filter { $0 == MediaType.tv.rawValue }
+            .mapToVoid()
         
         let timeTrigger = tfTimeWindow.rx.text
             .asDriver()
@@ -131,9 +129,10 @@ extension TrendingVC: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     @objc func pickerDone() {
-        view.endEditing(true)
         tfMediaType.text = selectedMediaType.rawValue
         tfTimeWindow.text = selectedTimeWindow.rawValue
+        handleTableViewVisibility(selectedMediaType.rawValue)
+        view.endEditing(true)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
